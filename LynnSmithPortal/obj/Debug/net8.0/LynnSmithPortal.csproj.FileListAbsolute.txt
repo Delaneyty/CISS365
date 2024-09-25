@@ -144,3 +144,4 @@ C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Proj
 C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0\LynnSmithPortal.pdb
 C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0\LynnSmithPortal.genruntimeconfig.cache
 C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0\ref\LynnSmithPortal.dll
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0\LynnSmithPortal.sourcelink.json

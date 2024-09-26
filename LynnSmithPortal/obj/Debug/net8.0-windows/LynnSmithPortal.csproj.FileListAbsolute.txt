@@ -1,0 +1,17 @@
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.LoginForm.resources
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.csproj.GenerateResource.cache
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.AssemblyInfoInputs.cache
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.AssemblyInfo.cs
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.csproj.CoreCompileInputs.cache
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.sourcelink.json
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\bin\Debug\net8.0-windows\LynnSmithPortal.exe
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\bin\Debug\net8.0-windows\LynnSmithPortal.deps.json
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\bin\Debug\net8.0-windows\LynnSmithPortal.runtimeconfig.json
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\bin\Debug\net8.0-windows\LynnSmithPortal.dll
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\bin\Debug\net8.0-windows\LynnSmithPortal.pdb
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.dll
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\refint\LynnSmithPortal.dll
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.pdb
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.genruntimeconfig.cache
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\ref\LynnSmithPortal.dll

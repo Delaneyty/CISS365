@@ -29,9 +29,9 @@ namespace LynnSmithPortal.Properties {
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=LynnSmithUniversityDB;Integrat" +
             "ed Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False" +
             ";Application Intent=ReadWrite;Multi Subnet Failover=False")]
-        public string Setting {
+        public string customConnString {
             get {
-                return ((string)(this["Setting"]));
+                return ((string)(this["customConnString"]));
             }
         }
     }

@@ -97,6 +97,7 @@
             loginButton.TabIndex = 2;
             loginButton.Text = "login";
             loginButton.UseVisualStyleBackColor = true;
+            loginButton.Click += loginButton_Click;
             // 
             // passwordTextField
             // 

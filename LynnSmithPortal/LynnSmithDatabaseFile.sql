@@ -29,47 +29,63 @@ GO
     HireDate DATE NOT NULL -- Faculty hire date
 );
 
+-- Application Table
+CREATE TABLE users.[Application] (
+    ApplicationId INT IDENTITY(1,1) PRIMARY KEY,
+    ApplicationDate DATE NOT NULL,
+    [Status] NVARCHAR(50) NOT NULL CHECK (Status IN ('Pending', 'Accepted', 'Rejected')), -- Application status
+    PersonalStatement NVARCHAR(1000), -- Example field for a personal statement or essay
+    DesiredMajor NVARCHAR(100), -- Major the applicant wants to pursue
+    [References] NVARCHAR(500) -- Example field for references or letters of recommendation
+);
+
+-- Student Table (Includes applicants, linked to an application)
 CREATE TABLE users.Student (
     Id INT IDENTITY(1,1) PRIMARY KEY,
     [Name] NVARCHAR(100) NOT NULL,
     Email NVARCHAR(100) NOT NULL UNIQUE,
     HashedPassword NVARCHAR(255) NOT NULL,
-    AccessLevel INT NOT NULL CHECK (AccessLevel = 2), -- 2 for Student
-    EnrollmentDate DATE NOT NULL, -- Student-specific field
-    Major NVARCHAR(100) NOT NULL -- Major field for students
+    AccessLevel INT NOT NULL CHECK (AccessLevel BETWEEN 1 AND 2), -- 1 for Applicant, 2 for Real Student
+    EnrollmentDate DATE, -- Nullable for applicants (since they aren't enrolled yet)
+    Major NVARCHAR(100), -- Nullable for applicants (since they may not have declared a major yet)
+    ApplicationId INT UNIQUE FOREIGN KEY REFERENCES users.[Application](ApplicationId) -- Links to the Application table
 );
 
-CREATE TABLE users.Applicant (
-    Id INT IDENTITY(1,1) PRIMARY KEY,
-    [Name] NVARCHAR(100) NOT NULL,
-    Email NVARCHAR(100) NOT NULL UNIQUE,
-    HashedPassword NVARCHAR(255) NOT NULL,
-    AccessLevel INT NOT NULL CHECK (AccessLevel = 1), -- 1 for Applicant
-    ApplicationDate DATE NOT NULL, -- Applicant-specific field
-    Status NVARCHAR(50) NOT NULL -- Application status (e.g., Pending, Accepted)
-);
-
-
- 
-
-SET IDENTITY_INSERT users.Admin ON;
+-- Insert sample data
+SET IDENTITY_INSERT users.[Admin] ON;
 INSERT INTO users.Admin (Id, [Name], Email, HashedPassword, AccessLevel, AdminLevel, IsSuperAdmin)
 VALUES (1, 'Admin', 'admin@admin.com', 'hashedpassword', 4, 1, 1);
-SET IDENTITY_INSERT users.Admin OFF;
+SET IDENTITY_INSERT users.[Admin] OFF;
 
 SET IDENTITY_INSERT users.Faculty ON;
 INSERT INTO users.Faculty (Id, [Name], Email, HashedPassword, AccessLevel, Department, HireDate)
 VALUES (2, 'Dr. John', 'johnb@lsu.com', 'hashedpassword', 3, 'Computer Science', '2020-08-15');
 SET IDENTITY_INSERT users.Faculty OFF;
 
+-- Insert Application and Student Data
+SET IDENTITY_INSERT users.[Application] ON;
+INSERT INTO users.[Application] (ApplicationId, ApplicationDate, [Status], PersonalStatement, DesiredMajor, [References])
+VALUES (1, '2022-12-01', 'Pending', 'I love studying technology.', 'Computer Science', 'Prof. A, Prof. B');
+SET IDENTITY_INSERT users.[Application] OFF;
+
 SET IDENTITY_INSERT users.Student ON;
-INSERT INTO users.Student (Id, [Name], Email, HashedPassword, AccessLevel, EnrollmentDate, Major)
-VALUES (3, 'Jane Doe', 'jane@student.com', 'hashedpassword', 2, '2021-09-01', 'Engineering');
+-- Real student (No application)
+INSERT INTO users.Student (Id, [Name], Email, HashedPassword, AccessLevel, EnrollmentDate, Major, ApplicationId)
+VALUES (3, 'Jane Doe', 'jane@student.com', 'hashedpassword', 2, '2021-09-01', 'Engineering', NULL);
+
+-- Applicant (Linked to application)
+INSERT INTO users.Student (Id, [Name], Email, HashedPassword, AccessLevel, EnrollmentDate, Major, ApplicationId)
+VALUES (4, 'Mark Smith', 'mark@applicant.com', 'hashedpassword', 1, NULL, NULL, 1);
 SET IDENTITY_INSERT users.Student OFF;
 
-SET IDENTITY_INSERT users.Applicant ON;
-INSERT INTO users.Applicant (Id, [Name], Email, HashedPassword, AccessLevel, ApplicationDate, Status)
-VALUES (4, 'Mark Smith', 'mark@applicant.com', 'hashedpassword', 1, '2022-12-01', 'Pending');
-SET IDENTITY_INSERT users.Applicant OFF;
+-- View all Admins
+SELECT * FROM users.[Admin];
 
-SELECT * FROM users.Admin;
+-- View all Faculty
+SELECT * FROM users.Faculty;
+
+-- View all Students (including applicants)
+SELECT * FROM users.Student;
+
+-- View Applications
+SELECT * FROM users.[Application];

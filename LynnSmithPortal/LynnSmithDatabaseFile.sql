@@ -51,9 +51,37 @@ CREATE TABLE users.Student (
     ApplicationId INT UNIQUE FOREIGN KEY REFERENCES users.[Application](ApplicationId) -- Links to the Application table
 );
 
--- Insert sample data
+-- Courses Table
+CREATE TABLE users.Courses (
+    CourseId INT IDENTITY(1,1) PRIMARY KEY,
+    CourseName NVARCHAR(100) NOT NULL,
+    Credits INT NOT NULL,
+    SeatsAvailable INT NOT NULL,
+    StudentsEnrolled INT NOT NULL DEFAULT 0, -- Keeps track of the number of students enrolled
+    DaysOfWeek NVARCHAR(50), -- For example, "Mon, Wed, Fri"
+    Prerequisites NVARCHAR(255), -- List of prerequisites as a comma-separated string
+    -- Additional fields for course details can be added here
+);
+
+-- Join Table: StudentCourses (many-to-many relationship)
+CREATE TABLE users.StudentCourses (
+    StudentId INT NOT NULL FOREIGN KEY REFERENCES users.Student(Id),
+    CourseId INT NOT NULL FOREIGN KEY REFERENCES users.Courses(CourseId),
+    PRIMARY KEY (StudentId, CourseId) -- Composite primary key
+);
+
+-- Join Table: CompletedCourses (Completed Courses)
+CREATE TABLE users.CompletedCourses (
+    StudentId INT NOT NULL FOREIGN KEY REFERENCES users.Student(Id),
+    CourseId INT NOT NULL FOREIGN KEY REFERENCES users.Courses(CourseId),
+    CompletionDate DATE NOT NULL,
+    Grade NVARCHAR(2), -- Optional grade for the completed course
+    PRIMARY KEY (StudentId, CourseId) -- Composite primary key
+);
+
+-- Insert sample data for Admin and Faculty
 SET IDENTITY_INSERT users.[Admin] ON;
-INSERT INTO users.Admin (Id, [Name], Email, HashedPassword, AccessLevel, AdminLevel, IsSuperAdmin)
+INSERT INTO users.[Admin] (Id, [Name], Email, HashedPassword, AccessLevel, AdminLevel, IsSuperAdmin)
 VALUES (1, 'Admin', 'admin@admin.com', 'hashedpassword', 4, 1, 1);
 SET IDENTITY_INSERT users.[Admin] OFF;
 
@@ -62,30 +90,34 @@ INSERT INTO users.Faculty (Id, [Name], Email, HashedPassword, AccessLevel, Depar
 VALUES (2, 'Dr. John', 'johnb@lsu.com', 'hashedpassword', 3, 'Computer Science', '2020-08-15');
 SET IDENTITY_INSERT users.Faculty OFF;
 
--- Insert Application and Student Data
+-- Insert sample data for Application and Student
 SET IDENTITY_INSERT users.[Application] ON;
 INSERT INTO users.[Application] (ApplicationId, ApplicationDate, [Status], PersonalStatement, DesiredMajor, [References])
 VALUES (1, '2022-12-01', 'Pending', 'I love studying technology.', 'Computer Science', 'Prof. A, Prof. B');
 SET IDENTITY_INSERT users.[Application] OFF;
 
 SET IDENTITY_INSERT users.Student ON;
--- Real student (No application)
 INSERT INTO users.Student (Id, [Name], Email, HashedPassword, AccessLevel, EnrollmentDate, Major, ApplicationId)
 VALUES (3, 'Jane Doe', 'jane@student.com', 'hashedpassword', 2, '2021-09-01', 'Engineering', NULL);
 
--- Applicant (Linked to application)
 INSERT INTO users.Student (Id, [Name], Email, HashedPassword, AccessLevel, EnrollmentDate, Major, ApplicationId)
 VALUES (4, 'Mark Smith', 'mark@applicant.com', 'hashedpassword', 1, NULL, NULL, 1);
 SET IDENTITY_INSERT users.Student OFF;
 
--- View all Admins
-SELECT * FROM users.[Admin];
+-- Insert sample data for Courses
+INSERT INTO users.Courses (CourseName, Credits, SeatsAvailable, DaysOfWeek, Prerequisites)
+VALUES ('Introduction to Computer Science', 3, 30, 'Mon, Wed, Fri', 'None');
 
--- View all Faculty
-SELECT * FROM users.Faculty;
+INSERT INTO users.Courses (CourseName, Credits, SeatsAvailable, DaysOfWeek, Prerequisites)
+VALUES ('Data Structures', 3, 25, 'Tue, Thu', 'Introduction to Computer Science');
 
--- View all Students (including applicants)
+-- Enroll Students in Courses
+INSERT INTO users.StudentCourses (StudentId, CourseId)
+VALUES (3, 1), (3, 2), (4, 1);
+
+-- Insert Completed Courses for Students
+INSERT INTO users.CompletedCourses (StudentId, CourseId, CompletionDate, Grade)
+VALUES (3, 1, '2022-05-15', 'A');
+
+-- View all Completed Courses for a Student
 SELECT * FROM users.Student;
-
--- View Applications
-SELECT * FROM users.[Application];

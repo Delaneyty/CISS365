@@ -50,11 +50,16 @@ namespace LynnSmithPortal
         {
             string email = emailTextBox.Text;
             string password = passwordTextField.Text;
+            Student student = GetStudentData(email, password);
 
-            if (ValidateStudentLogin(email, password))
+            if (student != null)
             {
                 MessageBox.Show("Login successful!");
-                // Navigate to the student dashboard or another page
+
+                // Navigate to the Student Dashboard and pass the student object
+                StudentDashboard dashboard = new StudentDashboard(student);
+                dashboard.Show();
+                this.Hide(); // Optionally hide or close the login form
             }
             else
             {
@@ -62,27 +67,66 @@ namespace LynnSmithPortal
             }
         }
 
-
-        // Method to validate the student login
-        private bool ValidateStudentLogin(string email, string password)
+        // Method to retrieve student data from the database
+        private Student GetStudentData(string email, string password)
         {
             string hashedPassword = HashPassword(password);
 
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.customConnString))
             {
                 connection.Open();
-                string query = "SELECT COUNT(1) FROM users.Student WHERE Email = @Email AND HashedPassword = @HashedPassword";
+                string query = "SELECT Id, [Name], Email, AccessLevel, EnrollmentDate, Major, ApplicationId FROM users.Student WHERE Email = @Email AND HashedPassword = @HashedPassword";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Email", email);
                     command.Parameters.AddWithValue("@HashedPassword", hashedPassword);
 
-                    int result = (int)command.ExecuteScalar();
-                    return result == 1; // Return true if a match is found
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Student
+                            {
+                                Id = reader.GetInt32(0),
+                                Name = reader.GetString(1),
+                                Email = reader.GetString(2),
+                                AccessLevel = reader.GetInt32(3),
+                                EnrollmentDate = reader.IsDBNull(4) ? (DateTime?)null : reader.GetDateTime(4),
+                                Major = reader.IsDBNull(5) ? null : reader.GetString(5),
+                                ApplicationId = reader.IsDBNull(6) ? (int?)null : reader.GetInt32(6)
+                            };
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
                 }
             }
         }
+
+
+        //// Method to validate the student login
+        //private bool ValidateStudentLogin(string email, string password)
+        //{
+        //    string hashedPassword = HashPassword(password);
+
+        //    using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.customConnString))
+        //    {
+        //        connection.Open();
+        //        string query = "SELECT COUNT(1) FROM users.Student WHERE Email = @Email AND HashedPassword = @HashedPassword";
+
+        //        using (SqlCommand command = new SqlCommand(query, connection))
+        //        {
+        //            command.Parameters.AddWithValue("@Email", email);
+        //            command.Parameters.AddWithValue("@HashedPassword", hashedPassword);
+
+        //            int result = (int)command.ExecuteScalar();
+        //            return result == 1; // Return true if a match is found
+        //        }
+        //    }
+        //}
 
         // Method to hash the password
         private string HashPassword(string password)

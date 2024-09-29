@@ -28,19 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            applicationStatusLabel = new Label();
             SuspendLayout();
+            // 
+            // applicationStatusLabel
+            // 
+            applicationStatusLabel.AutoSize = true;
+            applicationStatusLabel.Location = new Point(48, 79);
+            applicationStatusLabel.Name = "applicationStatusLabel";
+            applicationStatusLabel.Size = new Size(256, 41);
+            applicationStatusLabel.TabIndex = 0;
+            applicationStatusLabel.Text = "Application Status";
+            applicationStatusLabel.Click += applicationStatusLabel_Click;
             // 
             // StudentDashboard
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2027, 1018);
+            Controls.Add(applicationStatusLabel);
             Name = "StudentDashboard";
-            Text = "StudentDashboard";
+            Text = "Dashboard";
             Load += StudentDashboard_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label applicationStatusLabel;
     }
 }

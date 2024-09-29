@@ -88,6 +88,7 @@
             Controls.Add(linkLabel1);
             Name = "HomePage";
             Text = "Welcome";
+            Load += HomePage_Load;
             ResumeLayout(false);
             PerformLayout();
         }

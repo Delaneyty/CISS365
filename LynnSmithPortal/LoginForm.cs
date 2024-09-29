@@ -7,9 +7,12 @@ namespace LynnSmithPortal
 {
     public partial class LoginForm : Form
     {
-        public LoginForm()
+        private int accessLevel;
+        public LoginForm(int accessLevel)
         {
             InitializeComponent();
+            this.accessLevel = accessLevel;
+            SetPageTitle();
         }
         string connectionString = Properties.Settings.Default.customConnString;
 
@@ -40,7 +43,7 @@ namespace LynnSmithPortal
 
         private void createAccountlinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            //send the user to a create account page
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -96,7 +99,32 @@ namespace LynnSmithPortal
             }
         }
 
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
 
+        }
 
+        // Method to set the page title based on the access level
+        private void SetPageTitle()
+        {
+            switch (accessLevel)
+            {
+                case 1:
+                    PageTitle.Text = "Applicant Portal";
+                    break;
+                case 2:
+                    PageTitle.Text = "Student Portal";
+                    break;
+                case 3:
+                    PageTitle.Text = "Faculty Portal";
+                    break;
+                case 4:
+                    PageTitle.Text = "Admin Portal";
+                    break;
+                default:
+                    PageTitle.Text = "Lynn Smith University Portal"; // Default for other or unknown roles
+                    break;
+            }
+        }
     }
 }

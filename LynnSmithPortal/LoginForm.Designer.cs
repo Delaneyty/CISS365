@@ -41,13 +41,13 @@
             // PageTitle
             // 
             PageTitle.AutoSize = true;
-            PageTitle.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PageTitle.Location = new Point(321, 38);
+            PageTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PageTitle.Location = new Point(466, 67);
             PageTitle.Margin = new Padding(5, 0, 5, 0);
             PageTitle.Name = "PageTitle";
-            PageTitle.Size = new Size(713, 106);
+            PageTitle.Size = new Size(492, 81);
             PageTitle.TabIndex = 0;
-            PageTitle.Text = "Lynn Smith Portal";
+            PageTitle.Text = "Applicant Portal";
             PageTitle.TextAlign = ContentAlignment.MiddleCenter;
             PageTitle.Click += label1_Click;
             // 
@@ -128,6 +128,7 @@
             Margin = new Padding(5);
             Name = "LoginForm";
             Text = "Login";
+            Load += LoginForm_Load;
             loginGroupBox.ResumeLayout(false);
             loginGroupBox.PerformLayout();
             ResumeLayout(false);

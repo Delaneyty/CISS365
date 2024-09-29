@@ -81,6 +81,7 @@
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSteelBlue;
             ClientSize = new Size(1433, 853);
             Controls.Add(label1);
             Controls.Add(adminLinkLabel);

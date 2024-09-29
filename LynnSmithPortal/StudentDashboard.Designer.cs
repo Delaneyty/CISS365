@@ -45,10 +45,11 @@
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSteelBlue;
             ClientSize = new Size(2027, 1018);
             Controls.Add(applicationStatusLabel);
             Name = "StudentDashboard";
-            Text = "Dashboard";
+            Text = "Student Dashboard";
             Load += StudentDashboard_Load;
             ResumeLayout(false);
             PerformLayout();

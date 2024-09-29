@@ -45,14 +45,15 @@
             PageTitle.Location = new Point(466, 67);
             PageTitle.Margin = new Padding(5, 0, 5, 0);
             PageTitle.Name = "PageTitle";
-            PageTitle.Size = new Size(492, 81);
+            PageTitle.Size = new Size(442, 81);
             PageTitle.TabIndex = 0;
-            PageTitle.Text = "Applicant Portal";
+            PageTitle.Text = "Student Portal";
             PageTitle.TextAlign = ContentAlignment.MiddleCenter;
             PageTitle.Click += label1_Click;
             // 
             // loginGroupBox
             // 
+            loginGroupBox.BackColor = Color.LightSteelBlue;
             loginGroupBox.Controls.Add(createAccountlinkLabel);
             loginGroupBox.Controls.Add(label1);
             loginGroupBox.Controls.Add(loginButton);
@@ -122,6 +123,7 @@
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSteelBlue;
             ClientSize = new Size(1395, 1301);
             Controls.Add(loginGroupBox);
             Controls.Add(PageTitle);

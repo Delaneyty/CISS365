@@ -20,7 +20,7 @@ namespace LynnSmithPortal
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
-            LoginForm loginForm = new LoginForm(2);
+            LoginForm loginForm = new LoginForm(1);
             loginForm.ShowDialog();
         }
 

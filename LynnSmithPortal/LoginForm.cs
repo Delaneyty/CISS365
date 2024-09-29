@@ -44,6 +44,8 @@ namespace LynnSmithPortal
         private void createAccountlinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //send the user to a create account page
+            CreateAccount caForm = new CreateAccount(accessLevel);
+            caForm.ShowDialog();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -63,6 +65,7 @@ namespace LynnSmithPortal
             }
             else
             {
+                MessageBox.Show("You can only log in as student atm, admin and faculty not implemented yet -Ty.");
                 MessageBox.Show("Invalid email or password.");
             }
         }
@@ -154,8 +157,6 @@ namespace LynnSmithPortal
             switch (accessLevel)
             {
                 case 1:
-                    PageTitle.Text = "Applicant Portal";
-                    break;
                 case 2:
                     PageTitle.Text = "Student Portal";
                     break;

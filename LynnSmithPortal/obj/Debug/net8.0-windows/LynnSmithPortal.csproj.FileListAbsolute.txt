@@ -66,3 +66,4 @@ C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Proj
 C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.genruntimeconfig.cache
 C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\ref\LynnSmithPortal.dll
 C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.CreateAccount.resources
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.StudentDashboard.resources

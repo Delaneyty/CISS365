@@ -15,10 +15,12 @@ namespace LynnSmithPortal
     public partial class CreateAccount : Form
     {
         private int accessLevel;
-        public CreateAccount(int accessLevel)
+        private int applicationId;
+        public CreateAccount(int accessLevel, int applicationId)
         {
             InitializeComponent();
             this.accessLevel = accessLevel;
+            this.applicationId = applicationId;
         }
         //Note: All new users who are not admin, or faculty, will be created as applicant.
         //Once the application is approved, the user's accessLevel will change from: 1 (applicant) to 2 (student)
@@ -124,8 +126,8 @@ namespace LynnSmithPortal
                 if (table == "Student")
                 {
                     // Insert new applicant (student with AccessLevel 1) with EnrollmentDate
-                    query = "INSERT INTO users.Student (Name, Email, HashedPassword, AccessLevel, Major, EnrollmentDate) " +
-                            "VALUES (@Name, @Email, @HashedPassword, @AccessLevel, @MajorOrDepartment, @EnrollmentDate)";
+                    query = "INSERT INTO users.Student (Name, Email, HashedPassword, AccessLevel, Major, EnrollmentDate, ApplicationId) " +
+                            "VALUES (@Name, @Email, @HashedPassword, @AccessLevel, @MajorOrDepartment, @EnrollmentDate, @ApplicationId)";
                 }
                 else if (table == "Faculty")
                 {
@@ -145,6 +147,7 @@ namespace LynnSmithPortal
                     if (table == "Student")
                     {
                         command.Parameters.AddWithValue("@EnrollmentDate", now); // Add current date for EnrollmentDate
+                        command.Parameters.AddWithValue("@ApplicationId", applicationId);
                     }
                     else if (table == "Faculty")
                     {

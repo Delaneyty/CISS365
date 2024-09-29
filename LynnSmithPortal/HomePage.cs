@@ -20,19 +20,19 @@ namespace LynnSmithPortal
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
-            LoginForm loginForm = new LoginForm(1);
+            LoginForm loginForm = new LoginForm(1, false, -1);
             loginForm.ShowDialog();
         }
 
         private void adminLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            LoginForm loginForm = new LoginForm(4);
+            LoginForm loginForm = new LoginForm(4, true, -1);
             loginForm.ShowDialog();
         }
 
         private void facultyLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            LoginForm loginForm = new LoginForm(3);
+            LoginForm loginForm = new LoginForm(3, true, -1);
             loginForm.ShowDialog();
         }
 

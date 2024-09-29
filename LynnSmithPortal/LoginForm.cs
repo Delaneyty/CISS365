@@ -8,10 +8,14 @@ namespace LynnSmithPortal
     public partial class LoginForm : Form
     {
         private int accessLevel;
-        public LoginForm(int accessLevel)
+        private bool applicationComplete;
+        private int applicationId;
+        public LoginForm(int accessLevel, bool applicationComplete, int applicationId)
         {
             InitializeComponent();
             this.accessLevel = accessLevel;
+            this.applicationComplete = applicationComplete;
+            this.applicationId = applicationId;
             SetPageTitle();
         }
         string connectionString = Properties.Settings.Default.customConnString;
@@ -43,9 +47,21 @@ namespace LynnSmithPortal
 
         private void createAccountlinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //send the user to a create account page
-            CreateAccount caForm = new CreateAccount(accessLevel);
-            caForm.ShowDialog();
+            if (accessLevel > 3 || applicationComplete) //either faculty/admin or they filled out an application
+            {
+                if (!applicationComplete)
+                {
+                    applicationId = -1;
+                }
+                //send the user to a create account page
+                CreateAccount caForm = new CreateAccount(accessLevel, applicationId);
+                caForm.ShowDialog();
+            } else
+            { //they are a "new" student, so they must fill out an application first
+                FillableApplication faForm = new FillableApplication();
+                faForm.ShowDialog();
+            }
+            
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -157,6 +173,8 @@ namespace LynnSmithPortal
             switch (accessLevel)
             {
                 case 1:
+                    PageTitle.Text = "Student Portal";
+                    break;
                 case 2:
                     PageTitle.Text = "Student Portal";
                     break;
@@ -169,6 +187,14 @@ namespace LynnSmithPortal
                 default:
                     PageTitle.Text = "Lynn Smith University Portal"; // Default for other or unknown roles
                     break;
+            }
+
+            if (applicationComplete)
+            {
+                createAccountlinkLabel.Text = "Create Account";
+            } else
+            {
+                createAccountlinkLabel.Text = "Fill out application";
             }
         }
     }

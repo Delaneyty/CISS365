@@ -34,9 +34,13 @@ CREATE TABLE users.[Application] (
     ApplicationId INT IDENTITY(1,1) PRIMARY KEY,
     ApplicationDate DATE NOT NULL,
     [Status] NVARCHAR(50) NOT NULL CHECK (Status IN ('Pending', 'Accepted', 'Rejected')), -- Application status
-    PersonalStatement NVARCHAR(1000), -- Example field for a personal statement or essay
+    Comments NVARCHAR(500), -- Example field for a personal statement or essay
     DesiredMajor NVARCHAR(100), -- Major the applicant wants to pursue
-    [References] NVARCHAR(500) -- Example field for references or letters of recommendation
+    [References] NVARCHAR(500), -- Example field for references or letters of recommendation
+    EssayFile VARBINARY(MAX), -- Column to store the essay file
+    EssayFileName NVARCHAR(255), -- Original file name of the uploaded essay
+    EssayFileType NVARCHAR(50), -- MIME type of the uploaded file (e.g., application/pdf)
+    studentId INT NULL --no id exists at the time of creating the application
 );
 
 -- Student Table (Includes applicants, linked to an application)
@@ -92,7 +96,7 @@ SET IDENTITY_INSERT users.Faculty OFF;
 
 -- Insert sample data for Application and Student
 SET IDENTITY_INSERT users.[Application] ON;
-INSERT INTO users.[Application] (ApplicationId, ApplicationDate, [Status], PersonalStatement, DesiredMajor, [References])
+INSERT INTO users.[Application] (ApplicationId, ApplicationDate, [Status], Comments, DesiredMajor, [References])
 VALUES (1, '2022-12-01', 'Pending', 'I love studying technology.', 'Computer Science', 'Prof. A, Prof. B');
 SET IDENTITY_INSERT users.[Application] OFF;
 

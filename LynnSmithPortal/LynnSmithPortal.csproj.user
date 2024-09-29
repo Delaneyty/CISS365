@@ -4,6 +4,9 @@
     <Compile Update="CreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FillableApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -13,5 +16,10 @@
     <Compile Update="StudentDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="CreateAccount.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

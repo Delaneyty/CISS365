@@ -59,6 +59,7 @@ CREATE TABLE users.Student (
 CREATE TABLE users.Courses (
     CourseId INT IDENTITY(1,1) PRIMARY KEY,
     CourseName NVARCHAR(100) NOT NULL,
+    Semester INT NOT NULL CHECK (Semester BETWEEN 1 AND 2),
     Credits INT NOT NULL,
     SeatsAvailable INT NOT NULL,
     StudentsEnrolled INT NOT NULL DEFAULT 0, -- Keeps track of the number of students enrolled
@@ -109,11 +110,23 @@ VALUES (4, 'Mark Smith', 'mark@applicant.com', 'hashedpassword', 1, NULL, NULL, 
 SET IDENTITY_INSERT users.Student OFF;
 
 -- Insert sample data for Courses
-INSERT INTO users.Courses (CourseName, Credits, SeatsAvailable, DaysOfWeek, Prerequisites)
-VALUES ('Introduction to Computer Science', 3, 30, 'Mon, Wed, Fri', 'None');
-
-INSERT INTO users.Courses (CourseName, Credits, SeatsAvailable, DaysOfWeek, Prerequisites)
-VALUES ('Data Structures', 3, 25, 'Tue, Thu', 'Introduction to Computer Science');
+-- Insert sample data for Courses with Semesters
+INSERT INTO users.Courses (CourseName, Semester, Credits, SeatsAvailable, DaysOfWeek, Prerequisites)
+VALUES 
+('Introduction to Computer Science', 1, 3, 30, 'Mon, Wed, Fri', 'None'), -- Fall Semester
+('Data Structures', 2, 3, 25, 'Tue, Thu', 'Introduction to Computer Science'), -- Spring Semester
+('Introduction to Psychology', 1, 3, 50, 'Mon, Wed', 'None'), -- Fall Semester
+('Biology 101', 2, 4, 40, 'Tue, Thu', 'None'), -- Spring Semester
+('Physics 101', 1, 4, 35, 'Mon, Wed, Fri', 'None'), -- Fall Semester
+('Advanced Algorithms', 2, 3, 20, 'Wed, Fri', 'Data Structures'), -- Spring Semester
+('Calculus I', 1, 4, 30, 'Mon, Wed, Fri', 'None'), -- Fall Semester
+('History of Western Civilization', 2, 3, 25, 'Tue, Thu', 'None'), -- Spring Semester
+('Machine Learning', 1, 4, 20, 'Mon, Wed', 'Advanced Algorithms'), -- Fall Semester
+('Database Systems', 2, 3, 30, 'Mon, Wed, Fri', 'Data Structures'), -- Spring Semester
+('Operating Systems', 1, 4, 30, 'Mon, Wed, Fri', 'Data Structures'), -- Fall Semester
+('Artificial Intelligence', 2, 3, 25, 'Tue, Thu', 'Machine Learning'), -- Spring Semester
+('Linear Algebra', 1, 3, 30, 'Mon, Wed', 'Calculus I'), -- Fall Semester
+('Computer Networks', 2, 3, 30, 'Tue, Thu', 'Operating Systems'); -- Spring Semester
 
 -- Enroll Students in Courses
 INSERT INTO users.StudentCourses (StudentId, CourseId)
@@ -125,3 +138,4 @@ VALUES (3, 1, '2022-05-15', 'A');
 
 -- View all Completed Courses for a Student
 SELECT * FROM users.Student;
+SELECT * FROM users.Courses;

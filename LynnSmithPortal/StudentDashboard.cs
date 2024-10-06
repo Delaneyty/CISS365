@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace LynnSmithPortal
 {
@@ -24,17 +25,20 @@ namespace LynnSmithPortal
         {
             if (student.AccessLevel == 1) // Applicant
             {
-                applicationStatusLabel.Text = "Application Status: " + GetApplicationStatus(student.ApplicationId);
+                registerForCourseButton.Enabled = false;
+                registerForCourseButton.Visible = false;
             }
             else if (student.AccessLevel == 2) // Regular Student
             {
-                applicationStatusLabel.Text = "Courses: ";
+                registerForCourseButton.Enabled = true;
+                registerForCourseButton.Visible = true;
             }
+            applicationStatusLabel.Text = "Application Status: " + GetApplicationStatus(student.ApplicationId);
         }
 
         private void applicationStatusLabel_Click(object sender, EventArgs e)
         {
-            
+
         }
         // method to get the applicationStatus
         private string GetApplicationStatus(int? applicationId)
@@ -59,11 +63,17 @@ namespace LynnSmithPortal
             }
         }
 
+        private void registerForCourseButton_Click(object sender, EventArgs e)
+        {
+            RegisterCourseForm rcForm = new RegisterCourseForm(student);
+            rcForm.ShowDialog();
+        }
+
 
         //  method to get student courses
         //private string GetStudentCourses(int studentId)
         //{
-           
+
         //}
 
     }

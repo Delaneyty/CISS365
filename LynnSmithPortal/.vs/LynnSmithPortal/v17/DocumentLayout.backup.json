@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\delan\\onedrive\\desktop\\classwork\\fall 24-25\\project management\\app_project\\ciss365\\lynnsmithportal\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\delan\\onedrive\\desktop\\classwork\\fall 24-25\\project management\\app_project\\ciss365\\lynnsmithportal\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\delan\\onedrive\\desktop\\classwork\\fall 24-25\\project management\\app_project\\ciss365\\lynnsmithportal\\facultydashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:facultydashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\registercourseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:registercourseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\delan\\onedrive\\desktop\\classwork\\fall 24-25\\project management\\app_project\\ciss365\\lynnsmithportal\\registercourseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:registercourseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\delan\\onedrive\\desktop\\classwork\\fall 24-25\\project management\\app_project\\ciss365\\lynnsmithportal\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/LynnSmithUniversityDB/True/SqlTable/Users.Courses.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
@@ -16,24 +44,12 @@
       "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:lynnsmithdatabasefile.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\delan\\onedrive\\desktop\\classwork\\fall 24-25\\project management\\app_project\\ciss365\\lynnsmithportal\\registercourseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:registercourseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\delan\\onedrive\\desktop\\classwork\\fall 24-25\\project management\\app_project\\ciss365\\lynnsmithportal\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\delan\\onedrive\\desktop\\classwork\\fall 24-25\\project management\\app_project\\ciss365\\lynnsmithportal\\createaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:createaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\createaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:createaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\registercourseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:registercourseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\delan\\onedrive\\desktop\\classwork\\fall 24-25\\project management\\app_project\\ciss365\\lynnsmithportal\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,10 +62,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\delan\\onedrive\\desktop\\classwork\\fall 24-25\\project management\\app_project\\ciss365\\lynnsmithportal\\studentdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:studentdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\delan\\onedrive\\desktop\\classwork\\fall 24-25\\project management\\app_project\\ciss365\\lynnsmithportal\\lynnsmithdatabasefile.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
@@ -67,7 +79,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -75,7 +87,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\LoginForm.cs",
+              "RelativeDocumentMoniker": "LoginForm.cs",
+              "ToolTip": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\LoginForm.cs",
+              "RelativeToolTip": "LoginForm.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAYwEgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T02:19:34.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminDashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\AdminDashboard.cs",
+              "RelativeDocumentMoniker": "AdminDashboard.cs",
+              "ToolTip": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\AdminDashboard.cs [Design]",
+              "RelativeToolTip": "AdminDashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T02:18:10.259Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FacultyDashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\FacultyDashboard.cs",
+              "RelativeDocumentMoniker": "FacultyDashboard.cs",
+              "ToolTip": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\FacultyDashboard.cs [Design]",
+              "RelativeToolTip": "FacultyDashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T02:15:11.453Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Users.StudentCourses [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/LynnSmithUniversityDB/True/SqlTable/Users.StudentCourses.sql",
               "ToolTip": "Users.StudentCourses [Data]",
@@ -85,7 +134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "Users.Courses [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/LynnSmithUniversityDB/True/SqlTable/Users.Courses.sql",
               "ToolTip": "Users.Courses [Data]",
@@ -95,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "Users.Student [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/LynnSmithUniversityDB/True/SqlTable/Users.Student.sql",
               "ToolTip": "Users.Student [Data]",
@@ -105,19 +154,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Course.cs",
               "DocumentMoniker": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\Course.cs",
               "RelativeDocumentMoniker": "Course.cs",
               "ToolTip": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\Course.cs",
               "RelativeToolTip": "Course.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA7wCcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAiwCYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T21:28:52.776Z"
+              "WhenOpened": "2024-10-05T21:28:52.776Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "Student.cs",
               "DocumentMoniker": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\Student.cs",
               "RelativeDocumentMoniker": "Student.cs",
@@ -129,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "LynnSmithDatabaseFile.sql ",
               "DocumentMoniker": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\LynnSmithDatabaseFile.sql",
               "RelativeDocumentMoniker": "LynnSmithDatabaseFile.sql",
@@ -141,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "CreateAccount.cs",
               "DocumentMoniker": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\CreateAccount.cs",
               "RelativeDocumentMoniker": "CreateAccount.cs",
@@ -154,42 +204,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "RegisterCourseForm.cs",
               "DocumentMoniker": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\RegisterCourseForm.cs",
               "RelativeDocumentMoniker": "RegisterCourseForm.cs",
               "ToolTip": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\RegisterCourseForm.cs",
               "RelativeToolTip": "RegisterCourseForm.cs",
-              "ViewState": "AgIAALIAAAAAAAAAAAAUwN8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAUwF4AAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-05T19:23:20.915Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "RegisterCourseForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\RegisterCourseForm.cs",
               "RelativeDocumentMoniker": "RegisterCourseForm.cs",
               "ToolTip": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\RegisterCourseForm.cs [Design]",
               "RelativeToolTip": "RegisterCourseForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T19:22:13.598Z"
+              "WhenOpened": "2024-10-05T19:22:13.598Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 1,
               "Title": "LoginForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\LoginForm.cs",
               "RelativeDocumentMoniker": "LoginForm.cs",
               "ToolTip": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\LoginForm.cs [Design]",
               "RelativeToolTip": "LoginForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T19:20:20.523Z"
+              "WhenOpened": "2024-10-05T19:20:20.523Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "StudentDashboard.cs",
               "DocumentMoniker": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\StudentDashboard.cs",
               "RelativeDocumentMoniker": "StudentDashboard.cs",
@@ -202,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "StudentDashboard.cs [Design]",
               "DocumentMoniker": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\StudentDashboard.cs",
               "RelativeDocumentMoniker": "StudentDashboard.cs",
@@ -213,7 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "CreateAccount.cs [Design]",
               "DocumentMoniker": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\CreateAccount.cs",
               "RelativeDocumentMoniker": "CreateAccount.cs",

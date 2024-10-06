@@ -126,27 +126,7 @@ namespace LynnSmithPortal
         }
 
 
-        //// Method to validate the student login
-        //private bool ValidateStudentLogin(string email, string password)
-        //{
-        //    string hashedPassword = HashPassword(password);
-
-        //    using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.customConnString))
-        //    {
-        //        connection.Open();
-        //        string query = "SELECT COUNT(1) FROM users.Student WHERE Email = @Email AND HashedPassword = @HashedPassword";
-
-        //        using (SqlCommand command = new SqlCommand(query, connection))
-        //        {
-        //            command.Parameters.AddWithValue("@Email", email);
-        //            command.Parameters.AddWithValue("@HashedPassword", hashedPassword);
-
-        //            int result = (int)command.ExecuteScalar();
-        //            return result == 1; // Return true if a match is found
-        //        }
-        //    }
-        //}
-
+        
         // Method to hash the password
         private string HashPassword(string password)
         {

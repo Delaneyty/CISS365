@@ -34,8 +34,9 @@ namespace LynnSmithPortal
         // Override ToString to display course name in the UI, if necessary
         public override string ToString()
         {
-            return $"{CourseName} ({Credits} credits) - {DaysOfWeek}";
+            return $"{CourseName}, Credits: {Credits}, Seats Available: {SeatsAvailable}, Students Enrolled: {StudentsEnrolled}, Days: {DaysOfWeek}, Prerequisites: {Prerequisites}";
         }
+
     }
 
 }

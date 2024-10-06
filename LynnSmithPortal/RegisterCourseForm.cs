@@ -83,19 +83,32 @@ namespace LynnSmithPortal
             {
                 connection.Open();
 
-                string query = "INSERT INTO users.StudentCourses (StudentId, CourseId) " +
-                               "VALUES (@StudentId, @CourseId)";
+                // Insert the student-course registration
+                string registerQuery = "INSERT INTO users.StudentCourses (StudentId, CourseId) " +
+                                       "VALUES (@StudentId, @CourseId)";
 
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand registerCommand = new SqlCommand(registerQuery, connection))
                 {
-                    command.Parameters.AddWithValue("@StudentId", studentId);
-                    command.Parameters.AddWithValue("@CourseId", courseId);
+                    registerCommand.Parameters.AddWithValue("@StudentId", studentId);
+                    registerCommand.Parameters.AddWithValue("@CourseId", courseId);
 
-                    int result = command.ExecuteNonQuery();
+                    int result = registerCommand.ExecuteNonQuery();
 
                     if (result > 0)
                     {
-                        MessageBox.Show("Course successfully registered for student.");
+                        // If the registration was successful, update the SeatsAvailable and StudentsEnrolled
+                        string updateCourseQuery = "UPDATE users.Courses " +
+                                                   "SET SeatsAvailable = SeatsAvailable - 1, " +
+                                                   "StudentsEnrolled = StudentsEnrolled + 1 " +
+                                                   "WHERE CourseId = @CourseId";
+
+                        using (SqlCommand updateCourseCommand = new SqlCommand(updateCourseQuery, connection))
+                        {
+                            updateCourseCommand.Parameters.AddWithValue("@CourseId", courseId);
+                            updateCourseCommand.ExecuteNonQuery(); // Execute the update command
+                        }
+
+                        MessageBox.Show("Course successfully registered for student and updated course info.");
                     }
                     else
                     {
@@ -104,6 +117,8 @@ namespace LynnSmithPortal
                 }
             }
         }
+
+
 
         private void LoadAvailableCourses()
         {
@@ -123,9 +138,10 @@ namespace LynnSmithPortal
             // Populate the ListBox with the available courses
             foreach (var course in availableCourses)
             {
-                courseListBox.Items.Add(course.CourseName);
+                courseListBox.Items.Add(course.ToString()); // This will now display all the course details
             }
         }
+
 
         private List<int> GetEnrolledAndCompletedCourseIds(int studentId)
         {

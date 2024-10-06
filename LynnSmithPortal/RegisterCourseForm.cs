@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace LynnSmithPortal
 {
@@ -169,18 +172,15 @@ namespace LynnSmithPortal
         }
 
 
-
         private List<Course> GetCoursesBySemester(int semester)
         {
-            // This method would query the database to get courses for the selected semester.
-            // Example:
             List<Course> courses = new List<Course>();
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
-                string query = "SELECT CourseId, CourseName, Semester, Credits, SeatsAvailable, DaysOfWeek, Prerequisites " +
+                string query = "SELECT CourseId, CourseName, Semester, Credits, SeatsAvailable, StudentsEnrolled, DaysOfWeek, Prerequisites " +
                                "FROM users.Courses WHERE Semester = @Semester";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -191,15 +191,28 @@ namespace LynnSmithPortal
                     {
                         while (reader.Read())
                         {
+                            int courseId = reader.GetInt32(0); // CourseId
+                            string courseName = reader.GetString(1); // CourseName
+                            int courseSemester = reader.GetInt32(2); // Semester
+                            int credits = reader.GetInt32(3); // Credits
+
+                            // Handle possible null values or invalid data types for SeatsAvailable and StudentsEnrolled
+                            int seatsAvailable = reader.IsDBNull(4) ? 0 : reader.GetInt32(4); // SeatsAvailable
+                            int studentsEnrolled = reader.IsDBNull(5) ? 0 : reader.GetInt32(5); // StudentsEnrolled
+
+                            string daysOfWeek = reader.IsDBNull(6) ? string.Empty : reader.GetString(6); // DaysOfWeek
+                            string prerequisites = reader.IsDBNull(7) ? string.Empty : reader.GetString(7); // Prerequisites
+
+                            // Add course to the list
                             courses.Add(new Course(
-                                reader.GetInt32(0), // CourseId
-                                reader.GetString(1), // CourseName
-                                reader.GetInt32(2), // Semester
-                                reader.GetInt32(3), // Credits
-                                reader.GetInt32(4), // SeatsAvailable
-                                reader.GetInt32(5), //students enrolled
-                                reader.GetString(6), // DaysOfWeek
-                                reader.GetString(7)  // Prerequisites
+                                courseId,
+                                courseName,
+                                courseSemester,
+                                credits,
+                                seatsAvailable,
+                                studentsEnrolled,
+                                daysOfWeek,
+                                prerequisites
                             ));
                         }
                     }
@@ -208,5 +221,7 @@ namespace LynnSmithPortal
 
             return courses;
         }
+
+
     }
 }

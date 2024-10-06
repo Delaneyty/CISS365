@@ -111,22 +111,23 @@ SET IDENTITY_INSERT users.Student OFF;
 
 -- Insert sample data for Courses
 -- Insert sample data for Courses with Semesters
-INSERT INTO users.Courses (CourseName, Semester, Credits, SeatsAvailable, DaysOfWeek, Prerequisites)
+INSERT INTO users.Courses (CourseName, Semester, Credits, SeatsAvailable, StudentsEnrolled, DaysOfWeek, Prerequisites)
 VALUES 
-('Introduction to Computer Science', 1, 3, 30, 'Mon, Wed, Fri', 'None'), -- Fall Semester
-('Data Structures', 2, 3, 25, 'Tue, Thu', 'Introduction to Computer Science'), -- Spring Semester
-('Introduction to Psychology', 1, 3, 50, 'Mon, Wed', 'None'), -- Fall Semester
-('Biology 101', 2, 4, 40, 'Tue, Thu', 'None'), -- Spring Semester
-('Physics 101', 1, 4, 35, 'Mon, Wed, Fri', 'None'), -- Fall Semester
-('Advanced Algorithms', 2, 3, 20, 'Wed, Fri', 'Data Structures'), -- Spring Semester
-('Calculus I', 1, 4, 30, 'Mon, Wed, Fri', 'None'), -- Fall Semester
-('History of Western Civilization', 2, 3, 25, 'Tue, Thu', 'None'), -- Spring Semester
-('Machine Learning', 1, 4, 20, 'Mon, Wed', 'Advanced Algorithms'), -- Fall Semester
-('Database Systems', 2, 3, 30, 'Mon, Wed, Fri', 'Data Structures'), -- Spring Semester
-('Operating Systems', 1, 4, 30, 'Mon, Wed, Fri', 'Data Structures'), -- Fall Semester
-('Artificial Intelligence', 2, 3, 25, 'Tue, Thu', 'Machine Learning'), -- Spring Semester
-('Linear Algebra', 1, 3, 30, 'Mon, Wed', 'Calculus I'), -- Fall Semester
-('Computer Networks', 2, 3, 30, 'Tue, Thu', 'Operating Systems'); -- Spring Semester
+('Introduction to Computer Science', 1, 3, 30, 0, 'Mon, Wed, Fri', 'None'), -- Fall Semester
+('Data Structures', 2, 3, 25, 0, 'Tue, Thu', 'Introduction to Computer Science'), -- Spring Semester
+('Introduction to Psychology', 1, 3, 50, 0, 'Mon, Wed', 'None'), -- Fall Semester
+('Biology 101', 2, 4, 40, 0, 'Tue, Thu', 'None'), -- Spring Semester
+('Physics 101', 1, 4, 35, 0, 'Mon, Wed, Fri', 'None'), -- Fall Semester
+('Advanced Algorithms', 2, 3, 20, 0, 'Wed, Fri', 'Data Structures'), -- Spring Semester
+('Calculus I', 1, 4, 30, 0, 'Mon, Wed, Fri', 'None'), -- Fall Semester
+('History of Western Civilization', 2, 3, 25, 0, 'Tue, Thu', 'None'), -- Spring Semester
+('Machine Learning', 1, 4, 20, 0, 'Mon, Wed', 'Advanced Algorithms'), -- Fall Semester
+('Database Systems', 2, 3, 30, 0, 'Mon, Wed, Fri', 'Data Structures'), -- Spring Semester
+('Operating Systems', 1, 4, 30, 0, 'Mon, Wed, Fri', 'Data Structures'), -- Fall Semester
+('Artificial Intelligence', 2, 3, 25, 0, 'Tue, Thu', 'Machine Learning'), -- Spring Semester
+('Linear Algebra', 1, 3, 30, 0, 'Mon, Wed', 'Calculus I'), -- Fall Semester
+('Computer Networks', 2, 3, 30, 0, 'Tue, Thu', 'Operating Systems'); -- Spring Semester
+
 
 -- Enroll Students in Courses
 INSERT INTO users.StudentCourses (StudentId, CourseId)

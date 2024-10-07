@@ -12,9 +12,17 @@ namespace LynnSmithPortal
 {
     public partial class AdminDashboard : Form
     {
-        public AdminDashboard()
+        private Admin admin;
+
+        public AdminDashboard(Admin admin)
         {
             InitializeComponent();
+            this.admin = admin;
+        }
+
+        private void AdminDashboard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

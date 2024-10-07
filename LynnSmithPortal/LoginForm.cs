@@ -47,7 +47,7 @@ namespace LynnSmithPortal
 
         private void createAccountlinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (accessLevel > 3 || applicationComplete) //either faculty/admin or they filled out an application
+            if (accessLevel >= 3 || applicationComplete) //either faculty/admin or they filled out an application
             {
                 if (!applicationComplete)
                 {
@@ -56,7 +56,8 @@ namespace LynnSmithPortal
                 //send the user to a create account page
                 CreateAccount caForm = new CreateAccount(accessLevel, applicationId);
                 caForm.ShowDialog();
-            } else
+            } 
+            else
             { //they are a "new" student, so they must fill out an application first
                 FillableApplication faForm = new FillableApplication();
                 faForm.ShowDialog();
@@ -68,7 +69,21 @@ namespace LynnSmithPortal
         {
             string email = emailTextBox.Text;
             string password = passwordTextField.Text;
-            Student student = GetStudentData(email, password);
+            Student student = null;
+            Faculty faculty = null;
+            Admin admin = null;
+            if (accessLevel < 3)
+            {
+                student = GetStudentData(email, password);
+            }
+            else if (accessLevel == 3)
+            {
+                faculty = GetFacultyData(email, password);
+            } else if (accessLevel == 4)
+            {
+                admin = GetAdminData(email, password);
+            }
+
 
             if (student != null)
             {
@@ -77,11 +92,28 @@ namespace LynnSmithPortal
                 // Navigate to the Student Dashboard and pass the student object
                 StudentDashboard dashboard = new StudentDashboard(student);
                 dashboard.Show();
-                this.Hide(); // Optionally hide or close the login form
+                this.Hide(); // hide or close the login form
+            }
+            else if (faculty != null)
+            {
+                MessageBox.Show("Login successful!");
+
+                // Navigate to the Faculty Dashboard
+                FacultyDashboard facultyDashboard = new FacultyDashboard(faculty);
+                facultyDashboard.Show();
+                this.Hide();
+            }
+            else if (admin != null)
+            {
+                MessageBox.Show("Login successful!");
+
+                // Navigate to the Admin Dashboard
+                AdminDashboard adminDashboard = new AdminDashboard(admin);
+                adminDashboard.Show();
+                this.Hide();
             }
             else
             {
-                MessageBox.Show("You can only log in as student atm, admin and faculty not implemented yet -Ty.");
                 MessageBox.Show("Invalid email or password.");
             }
         }
@@ -124,9 +156,85 @@ namespace LynnSmithPortal
                 }
             }
         }
+        // Method to retrieve faculty data from the database
+        private Faculty GetFacultyData(string email, string password)
+        {
+            string hashedPassword = HashPassword(password);
+
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.customConnString))
+            {
+                connection.Open();
+                string query = "SELECT Id, [Name], Email, AccessLevel, Department, HireDate FROM users.Faculty WHERE Email = @Email AND HashedPassword = @HashedPassword";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Email", email);
+                    command.Parameters.AddWithValue("@HashedPassword", hashedPassword);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Faculty
+                            {
+                                Id = reader.GetInt32(0),
+                                Name = reader.GetString(1),
+                                Email = reader.GetString(2),
+                                AccessLevel = reader.GetInt32(3),
+                                Department = reader.GetString(4),
+                                HireDate = reader.GetDateTime(5)
+                            };
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Method to retrieve admin data from the database
+        private Admin GetAdminData(string email, string password)
+        {
+            string hashedPassword = HashPassword(password);
+
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.customConnString))
+            {
+                connection.Open();
+                string query = "SELECT Id, [Name], Email, AccessLevel, AdminLevel, IsSuperAdmin FROM users.Admin WHERE Email = @Email AND HashedPassword = @HashedPassword";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Email", email);
+                    command.Parameters.AddWithValue("@HashedPassword", hashedPassword);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Admin
+                            {
+                                Id = reader.GetInt32(0),
+                                Name = reader.GetString(1),
+                                Email = reader.GetString(2),
+                                AccessLevel = reader.GetInt32(3),
+                                AdminLevel = reader.GetInt32(4),
+                                IsSuperAdmin = reader.GetBoolean(5)
+                            };
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                }
+            }
+        }
 
 
-        
+
+
         // Method to hash the password
         private string HashPassword(string password)
         {

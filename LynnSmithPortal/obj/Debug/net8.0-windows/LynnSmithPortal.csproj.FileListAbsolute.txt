@@ -69,3 +69,6 @@ C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Proj
 C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.StudentDashboard.resources
 C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.FillableApplication.resources
 C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.RegisterCourseForm.resources
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.AdminDashboard.resources
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.FacultyDashboard.resources
+C:\Users\delan\OneDrive\Desktop\Classwork\FALL 24-25\project management\App_Project\CISS365\LynnSmithPortal\obj\Debug\net8.0-windows\LynnSmithPortal.FacultyApplicationViewer.resources

@@ -32,12 +32,14 @@
             // 
             // AdminDashboard
             // 
-            AutoScaleDimensions = new SizeF(17F, 41F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
-            ClientSize = new Size(1933, 942);
+            ClientSize = new Size(1137, 574);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "AdminDashboard";
             Text = "Admin Dashboard";
+            Load += AdminDashboard_Load;
             ResumeLayout(false);
         }
 

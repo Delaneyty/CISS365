@@ -7,6 +7,9 @@
     <Compile Update="CreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FacultyApplicationViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FacultyDashboard.cs">
       <SubType>Form</SubType>
     </Compile>

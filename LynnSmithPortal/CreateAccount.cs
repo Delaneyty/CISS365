@@ -117,6 +117,7 @@ namespace LynnSmithPortal
         {
             string connectionString = Properties.Settings.Default.customConnString;
             DateTime now = DateTime.Now; // Get the current date/time
+            int newStudentId = 0;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -125,8 +126,9 @@ namespace LynnSmithPortal
 
                 if (table == "Student")
                 {
-                    // Insert new applicant (student with AccessLevel 1) with EnrollmentDate
+                    // Insert new applicant (student with AccessLevel 1 or 2) with EnrollmentDate
                     query = "INSERT INTO users.Student (Name, Email, HashedPassword, AccessLevel, Major, EnrollmentDate, ApplicationId) " +
+                            "OUTPUT INSERTED.Id " +  // Get the inserted student's Id
                             "VALUES (@Name, @Email, @HashedPassword, @AccessLevel, @MajorOrDepartment, @EnrollmentDate, @ApplicationId)";
                 }
                 else if (table == "Faculty")
@@ -148,15 +150,21 @@ namespace LynnSmithPortal
                     {
                         command.Parameters.AddWithValue("@EnrollmentDate", now); // Add current date for EnrollmentDate
                         command.Parameters.AddWithValue("@ApplicationId", applicationId);
+
+                        // Execute and retrieve the newly inserted studentId
+                        newStudentId = (int)command.ExecuteScalar();
                     }
                     else if (table == "Faculty")
                     {
                         command.Parameters.AddWithValue("@HireDate", now); // Add current date for HireDate
+                        command.ExecuteNonQuery();
                     }
 
-                    int result = command.ExecuteNonQuery();
-                    if (result > 0)
+                    if (newStudentId > 0)
                     {
+                        // Insert sample completed courses for the new student
+                        InsertSampleCompletedCourses(newStudentId);
+
                         MessageBox.Show("Account created successfully!");
                         this.Close();
                     }
@@ -167,5 +175,41 @@ namespace LynnSmithPortal
                 }
             }
         }
+
+        private void InsertSampleCompletedCourses(int studentId)
+        {
+            string connectionString = Properties.Settings.Default.customConnString;
+
+            // Sample data for completed courses
+            var completedCourses = new List<(int courseId, string completionDate, string grade)>
+            {
+                (1, "2023-05-15", "A"),   // Example: Introduction to Computer Science
+                (2, "2023-06-10", "B+"),  // Example: Data Structures
+                (3, "2022-12-20", "A-")   // Example: Introduction to Psychology
+            };
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                foreach (var course in completedCourses)
+                {
+                    string query = "INSERT INTO users.CompletedCourses (StudentId, CourseId, CompletionDate, Grade) " +
+                                   "VALUES (@StudentId, @CourseId, @CompletionDate, @Grade)";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@StudentId", studentId);
+                        command.Parameters.AddWithValue("@CourseId", course.courseId);
+                        command.Parameters.AddWithValue("@CompletionDate", course.completionDate);
+                        command.Parameters.AddWithValue("@Grade", course.grade);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+
+
     }
 }

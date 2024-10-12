@@ -32,6 +32,8 @@
             registerForCourseButton = new Button();
             attendanceLabel = new Label();
             attendanceListBox = new ListBox();
+            gradesListBox = new ListBox();
+            label1 = new Label();
             SuspendLayout();
             // 
             // applicationStatusLabel
@@ -48,7 +50,7 @@
             // registerForCourseButton
             // 
             registerForCourseButton.Location = new Point(28, 115);
-            registerForCourseButton.Margin = new Padding(2, 2, 2, 2);
+            registerForCourseButton.Margin = new Padding(2);
             registerForCourseButton.Name = "registerForCourseButton";
             registerForCourseButton.Size = new Size(118, 77);
             registerForCourseButton.TabIndex = 1;
@@ -73,11 +75,31 @@
             attendanceListBox.FormattingEnabled = true;
             attendanceListBox.ItemHeight = 25;
             attendanceListBox.Location = new Point(577, 104);
-            attendanceListBox.Margin = new Padding(2, 2, 2, 2);
+            attendanceListBox.Margin = new Padding(2);
             attendanceListBox.Name = "attendanceListBox";
             attendanceListBox.Size = new Size(610, 479);
             attendanceListBox.TabIndex = 3;
             attendanceListBox.SelectedIndexChanged += attendanceListBox_SelectedIndexChanged;
+            // 
+            // gradesListBox
+            // 
+            gradesListBox.FormattingEnabled = true;
+            gradesListBox.ItemHeight = 25;
+            gradesListBox.Location = new Point(28, 329);
+            gradesListBox.Name = "gradesListBox";
+            gradesListBox.Size = new Size(509, 254);
+            gradesListBox.TabIndex = 4;
+            gradesListBox.SelectedIndexChanged += gradesListBox_SelectedIndexChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(33, 288);
+            label1.Name = "label1";
+            label1.Size = new Size(113, 38);
+            label1.TabIndex = 5;
+            label1.Text = "Grades:";
             // 
             // StudentDashboard
             // 
@@ -85,11 +107,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(1192, 621);
+            Controls.Add(label1);
+            Controls.Add(gradesListBox);
             Controls.Add(attendanceListBox);
             Controls.Add(attendanceLabel);
             Controls.Add(registerForCourseButton);
             Controls.Add(applicationStatusLabel);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "StudentDashboard";
             Text = "Student Dashboard";
             Load += StudentDashboard_Load;
@@ -103,5 +127,7 @@
         private Button registerForCourseButton;
         private Label attendanceLabel;
         private ListBox attendanceListBox;
+        private ListBox gradesListBox;
+        private Label label1;
     }
 }

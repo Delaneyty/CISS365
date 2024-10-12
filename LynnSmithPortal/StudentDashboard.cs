@@ -42,6 +42,7 @@ namespace LynnSmithPortal
 
             //load absences
             LoadStudentAbsences(student.studentId);
+            LoadCompletedCourses(student.studentId);
         }
 
         private void applicationStatusLabel_Click(object sender, EventArgs e)
@@ -120,6 +121,40 @@ namespace LynnSmithPortal
                     }
                 }
             }
+        }
+        private void LoadCompletedCourses(int studentId)
+        {
+            gradesListBox.Items.Clear(); // Clear the ListBox before adding new items
+
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.customConnString))
+            {
+                connection.Open();
+                string query = @"
+                SELECT c.CourseName, cc.Grade
+                FROM users.CompletedCourses cc
+                JOIN users.Courses c ON cc.CourseId = c.CourseId
+                WHERE cc.StudentId = @StudentId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@StudentId", studentId);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        string courseName = reader["CourseName"].ToString();
+                        string grade = reader["Grade"].ToString();
+                        string displayText = $"{courseName} - Grade: {grade}";
+
+                        gradesListBox.Items.Add(displayText);
+                    }
+                }
+            }
+        }
+
+        private void gradesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         //  method to get student courses

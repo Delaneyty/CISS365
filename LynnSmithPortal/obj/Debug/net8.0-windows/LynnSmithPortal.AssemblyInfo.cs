@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LynnSmithPortal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c832d407235da4f8f20e4415ecc8def585c8a372")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c31a9a255368e89bd715f0527c9f1debc86bee19")]
 [assembly: System.Reflection.AssemblyProductAttribute("LynnSmithPortal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LynnSmithPortal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

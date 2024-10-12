@@ -139,7 +139,7 @@ namespace LynnSmithPortal
                         {
                             return new Student
                             {
-                                Id = reader.GetInt32(0),
+                                studentId = reader.GetInt32(0),
                                 Name = reader.GetString(1),
                                 Email = reader.GetString(2),
                                 AccessLevel = reader.GetInt32(3),

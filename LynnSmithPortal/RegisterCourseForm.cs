@@ -19,6 +19,7 @@ namespace LynnSmithPortal
         private int selectedSemester = 0; // 1 = fall, 2 = spring
         private Student student;
         private List<Course> availableCourses;
+        private Course selectedCourse;
         private string connectionString = Properties.Settings.Default.customConnString;
         public RegisterCourseForm(Student student)
         {
@@ -38,7 +39,7 @@ namespace LynnSmithPortal
             if (fallRadioButton.Checked)
             {
                 selectedSemester = 1;  // Set to 1 if Fall is selected
-                
+
                 LoadAvailableCourses();
             }
         }
@@ -49,74 +50,74 @@ namespace LynnSmithPortal
             if (springRadioButton.Checked)
             {
                 selectedSemester = 2;  // Set to 2 if Spring is selected
-               
+
                 LoadAvailableCourses();
             }
         }
 
         private void registerCourseButton_Click(object sender, EventArgs e)
         {
-            // Get selected courses
-            var selectedCourses = new List<Course>();
-            foreach (var item in courseListBox.CheckedItems)
+            // Ensure a course is selected
+            if (selectedCourse == null)
             {
-                var course = availableCourses.FirstOrDefault(c => c.CourseName == item.ToString());
-                if (course != null)
-                {
-                    selectedCourses.Add(course);
-                }
-            }
-            //register for the course
-            foreach (var course in selectedCourses)
-            {
-                RegisterStudentForCourse(student.Id, course.CourseId);
+                MessageBox.Show("Please select a course to register.");
+                return;
             }
 
-            MessageBox.Show("Courses registered successfully!");
+            // Register the student for the selected course
+            RegisterStudentForCourse(student.studentId, selectedCourse.CourseId);
         }
 
 
         // Method to register the student for selected courses in the database
         private void RegisterStudentForCourse(int studentId, int courseId)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                connection.Open();
-
-                // Insert the student-course registration
-                string registerQuery = "INSERT INTO users.StudentCourses (StudentId, CourseId) " +
-                                       "VALUES (@StudentId, @CourseId)";
-
-                using (SqlCommand registerCommand = new SqlCommand(registerQuery, connection))
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    registerCommand.Parameters.AddWithValue("@StudentId", studentId);
-                    registerCommand.Parameters.AddWithValue("@CourseId", courseId);
+                    connection.Open();
 
-                    int result = registerCommand.ExecuteNonQuery();
+                    // Insert the student-course registration
+                    string registerQuery = "INSERT INTO users.StudentCourses (StudentId, CourseId) VALUES (@StudentId, @CourseId)";
 
-                    if (result > 0)
+                    using (SqlCommand registerCommand = new SqlCommand(registerQuery, connection))
                     {
-                        // If the registration was successful, update the SeatsAvailable and StudentsEnrolled
-                        string updateCourseQuery = "UPDATE users.Courses " +
-                                                   "SET SeatsAvailable = SeatsAvailable - 1, " +
-                                                   "StudentsEnrolled = StudentsEnrolled + 1 " +
-                                                   "WHERE CourseId = @CourseId";
+                        registerCommand.Parameters.AddWithValue("@StudentId", studentId);
+                        registerCommand.Parameters.AddWithValue("@CourseId", courseId);
 
-                        using (SqlCommand updateCourseCommand = new SqlCommand(updateCourseQuery, connection))
+                        int result = registerCommand.ExecuteNonQuery();
+
+                        if (result > 0)
                         {
-                            updateCourseCommand.Parameters.AddWithValue("@CourseId", courseId);
-                            updateCourseCommand.ExecuteNonQuery(); // Execute the update command
-                        }
+                            // Update course availability after successful registration
+                            string updateCourseQuery = "UPDATE users.Courses SET SeatsAvailable = SeatsAvailable - 1, StudentsEnrolled = StudentsEnrolled + 1 WHERE CourseId = @CourseId";
 
-                        MessageBox.Show("Course successfully registered for student and updated course info.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error registering course.");
+                            using (SqlCommand updateCourseCommand = new SqlCommand(updateCourseQuery, connection))
+                            {
+                                updateCourseCommand.Parameters.AddWithValue("@CourseId", courseId);
+                                updateCourseCommand.ExecuteNonQuery(); // Execute the update command
+                            }
+
+                            MessageBox.Show("Course successfully registered for student and updated course info.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error registering course.");
+                        }
                     }
                 }
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("SQL Error: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
+
 
 
 
@@ -125,7 +126,7 @@ namespace LynnSmithPortal
             List<Course> allCourses = GetCoursesBySemester(selectedSemester);
 
             // Retrieve the course IDs of enrolled and completed courses
-            var enrolledOrCompleted = GetEnrolledAndCompletedCourseIds(student.Id);
+            var enrolledOrCompleted = GetEnrolledAndCompletedCourseIds(student.studentId);
 
             // Filter out the courses the student is already enrolled in or has completed
             availableCourses = allCourses
@@ -138,7 +139,7 @@ namespace LynnSmithPortal
             // Populate the ListBox with the available courses
             foreach (var course in availableCourses)
             {
-                courseListBox.Items.Add(course.ToString()); // This will now display all the course details
+                courseListBox.Items.Add(course.ToString()); // Only display course names in the ListBox
             }
         }
 
@@ -238,6 +239,11 @@ namespace LynnSmithPortal
             return courses;
         }
 
-
+        private void courseListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Get the selected course from the available courses
+            string selectedCourseName = courseListBox.SelectedItem.ToString();
+            selectedCourse = availableCourses.FirstOrDefault(c => c.ToString() == selectedCourseName);
+        }
     }
 }

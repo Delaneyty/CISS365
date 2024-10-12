@@ -83,6 +83,14 @@ CREATE TABLE users.CompletedCourses (
     Grade NVARCHAR(2), -- Optional grade for the completed course
     PRIMARY KEY (StudentId, CourseId) -- Composite primary key
 );
+--Only track the days the student was gone
+CREATE TABLE users.Absences (
+    StudentId INT NOT NULL FOREIGN KEY REFERENCES users.Student(Id),
+    CourseId INT NOT NULL FOREIGN KEY REFERENCES users.Courses(CourseId),
+    AbsenceDate DATE NOT NULL,
+    PRIMARY KEY (StudentId, CourseId, AbsenceDate) -- Ensures no duplicate absence entries
+);
+
 
 -- Insert sample data for Admin and Faculty
 SET IDENTITY_INSERT users.[Admin] ON;
@@ -109,6 +117,9 @@ INSERT INTO users.Student (Id, [Name], Email, HashedPassword, AccessLevel, Enrol
 VALUES (4, 'Mark Smith', 'mark@applicant.com', 'hashedpassword', 1, NULL, NULL, 1);
 SET IDENTITY_INSERT users.Student OFF;
 
+--INSERT INTO users.Absences (StudentId, CourseId, AbsenceDate)
+--VALUES (3, 1, '2023-01-10'), (4, 2, '2023-01-11');
+
 -- Insert sample data for Courses
 -- Insert sample data for Courses with Semesters
 INSERT INTO users.Courses (CourseName, Semester, Credits, SeatsAvailable, StudentsEnrolled, DaysOfWeek, Prerequisites)
@@ -130,8 +141,8 @@ VALUES
 
 
 -- Enroll Students in Courses
-INSERT INTO users.StudentCourses (StudentId, CourseId)
-VALUES (3, 1), (3, 2), (4, 1);
+--INSERT INTO users.StudentCourses (StudentId, CourseId)
+--VALUES (3, 1), (3, 2), (4, 1);
 
 -- Insert Completed Courses for Students
 INSERT INTO users.CompletedCourses (StudentId, CourseId, CompletionDate, Grade)
@@ -140,3 +151,4 @@ VALUES (3, 1, '2022-05-15', 'A');
 -- View all Completed Courses for a Student
 SELECT * FROM users.Student;
 SELECT * FROM users.Courses;
+SELECT * FROM users.StudentCourses;

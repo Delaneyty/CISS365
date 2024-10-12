@@ -75,7 +75,7 @@ namespace LynnSmithPortal
         private void approveButton_Click(object sender, EventArgs e)
         {
             UpdateApplicationStatus(student.ApplicationId.Value, "Accepted");
-            UpdateStudentAccessLevel(student.Id, 2); // Set AccessLevel to 2 (Real Student)
+            UpdateStudentAccessLevel(student.studentId, 2); // Set AccessLevel to 2 (Real Student)
 
             MessageBox.Show("Application approved.");
             this.Close(); // Optionally close the form after approval

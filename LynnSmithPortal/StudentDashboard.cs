@@ -27,13 +27,21 @@ namespace LynnSmithPortal
             {
                 registerForCourseButton.Enabled = false;
                 registerForCourseButton.Visible = false;
+                attendanceLabel.Enabled = false;
+                attendanceListBox.Enabled = false;
+
             }
             else if (student.AccessLevel == 2) // Regular Student
             {
                 registerForCourseButton.Enabled = true;
                 registerForCourseButton.Visible = true;
+                attendanceLabel.Enabled = true;
+                attendanceListBox.Enabled = true;
             }
             applicationStatusLabel.Text = "Application Status: " + GetApplicationStatus(student.ApplicationId);
+
+            //load absences
+            LoadStudentAbsences(student.studentId);
         }
 
         private void applicationStatusLabel_Click(object sender, EventArgs e)
@@ -69,6 +77,50 @@ namespace LynnSmithPortal
             rcForm.ShowDialog();
         }
 
+        private void viewGradesAttendance_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void attendanceListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void attendanceLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadStudentAbsences(int studentId)
+        {
+            attendanceListBox.Items.Clear(); // Clear the ListBox before adding new items
+
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.customConnString))
+            {
+                connection.Open();
+                string query = @"
+                SELECT c.CourseName, a.AbsenceDate
+                FROM users.Absences a
+                JOIN users.Courses c ON a.CourseId = c.CourseId
+                WHERE a.StudentId = @StudentId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@StudentId", studentId);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        string courseName = reader["CourseName"].ToString();
+                        DateTime absenceDate = (DateTime)reader["AbsenceDate"];
+                        string displayText = $"{courseName} - {absenceDate.ToString("yyyy-MM-dd")}";
+
+                        attendanceListBox.Items.Add(displayText);
+                    }
+                }
+            }
+        }
 
         //  method to get student courses
         //private string GetStudentCourses(int studentId)

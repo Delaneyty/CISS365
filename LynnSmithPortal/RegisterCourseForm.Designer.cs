@@ -40,9 +40,10 @@
             // fallRadioButton
             // 
             fallRadioButton.AutoSize = true;
-            fallRadioButton.Location = new Point(22, 105);
+            fallRadioButton.Location = new Point(13, 64);
+            fallRadioButton.Margin = new Padding(2, 2, 2, 2);
             fallRadioButton.Name = "fallRadioButton";
-            fallRadioButton.Size = new Size(240, 45);
+            fallRadioButton.Size = new Size(147, 29);
             fallRadioButton.TabIndex = 0;
             fallRadioButton.TabStop = true;
             fallRadioButton.Text = "Fall - 16 Week";
@@ -52,9 +53,10 @@
             // springRadioButton
             // 
             springRadioButton.AutoSize = true;
-            springRadioButton.Location = new Point(344, 105);
+            springRadioButton.Location = new Point(202, 64);
+            springRadioButton.Margin = new Padding(2, 2, 2, 2);
             springRadioButton.Name = "springRadioButton";
-            springRadioButton.Size = new Size(283, 45);
+            springRadioButton.Size = new Size(174, 29);
             springRadioButton.TabIndex = 1;
             springRadioButton.TabStop = true;
             springRadioButton.Text = "Spring - 16 Week";
@@ -65,17 +67,19 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 16.1F, FontStyle.Bold);
-            label1.Location = new Point(12, 9);
+            label1.Location = new Point(7, 5);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(272, 72);
+            label1.Size = new Size(168, 45);
             label1.TabIndex = 2;
             label1.Text = "Semester:";
             // 
             // registerCourseButton
             // 
-            registerCourseButton.Location = new Point(1854, 87);
+            registerCourseButton.Location = new Point(1091, 53);
+            registerCourseButton.Margin = new Padding(2, 2, 2, 2);
             registerCourseButton.Name = "registerCourseButton";
-            registerCourseButton.Size = new Size(422, 63);
+            registerCourseButton.Size = new Size(248, 38);
             registerCourseButton.TabIndex = 3;
             registerCourseButton.Text = "Register Course";
             registerCourseButton.UseVisualStyleBackColor = true;
@@ -85,18 +89,21 @@
             // 
             courseListBox.BackColor = Color.LightSteelBlue;
             courseListBox.FormattingEnabled = true;
-            courseListBox.Location = new Point(22, 343);
+            courseListBox.Location = new Point(13, 209);
+            courseListBox.Margin = new Padding(2, 2, 2, 2);
             courseListBox.Name = "courseListBox";
-            courseListBox.Size = new Size(2254, 532);
+            courseListBox.Size = new Size(1328, 312);
             courseListBox.TabIndex = 4;
+            courseListBox.SelectedIndexChanged += courseListBox_SelectedIndexChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.ForeColor = SystemColors.ControlDarkDark;
-            label2.Location = new Point(1041, 295);
+            label2.Location = new Point(612, 180);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(1225, 41);
+            label2.Size = new Size(731, 25);
             label2.TabIndex = 5;
             label2.Text = "Select 1 or more courses to register. (This will not show courses you are already enrolled in)";
             // 
@@ -104,18 +111,19 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 14.1F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(22, 278);
+            label3.Location = new Point(13, 170);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(410, 62);
+            label3.Size = new Size(255, 40);
             label3.TabIndex = 6;
             label3.Text = "Available Courses:";
             // 
             // RegisterCourseForm
             // 
-            AutoScaleDimensions = new SizeF(17F, 41F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
-            ClientSize = new Size(2315, 927);
+            ClientSize = new Size(1362, 565);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(courseListBox);
@@ -123,6 +131,7 @@
             Controls.Add(label1);
             Controls.Add(springRadioButton);
             Controls.Add(fallRadioButton);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "RegisterCourseForm";
             Text = "Register for a course";
             Load += RegisterCourseForm_Load;

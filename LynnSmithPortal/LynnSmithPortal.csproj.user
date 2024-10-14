@@ -28,6 +28,9 @@
     <Compile Update="StudentDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="StudentGraduationProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="CreateAccount.resx">

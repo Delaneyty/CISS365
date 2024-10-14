@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\LynnSmithPortal.csproj": {}
+    "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\LynnSmithPortal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\LynnSmithPortal.csproj": {
+    "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\LynnSmithPortal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\LynnSmithPortal.csproj",
+        "projectUniqueName": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\LynnSmithPortal.csproj",
         "projectName": "LynnSmithPortal",
-        "projectPath": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\LynnSmithPortal.csproj",
-        "packagesPath": "C:\\Users\\delan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\delan\\OneDrive\\Desktop\\Classwork\\FALL 24-25\\project management\\App_Project\\CISS365\\LynnSmithPortal\\obj\\",
+        "projectPath": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\LynnSmithPortal.csproj",
+        "packagesPath": "C:\\Users\\Sarah\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sarah\\Source\\Repos\\CISS365\\LynnSmithPortal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\delan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sarah\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -74,7 +74,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

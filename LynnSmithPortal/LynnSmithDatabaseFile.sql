@@ -117,8 +117,8 @@ INSERT INTO users.Student (Id, [Name], Email, HashedPassword, AccessLevel, Enrol
 VALUES (4, 'Mark Smith', 'mark@applicant.com', 'hashedpassword', 1, NULL, NULL, 1);
 SET IDENTITY_INSERT users.Student OFF;
 
---INSERT INTO users.Absences (StudentId, CourseId, AbsenceDate)
---VALUES (3, 1, '2023-01-10'), (4, 2, '2023-01-11');
+INSERT INTO users.Absences (StudentId, CourseId, AbsenceDate)
+VALUES (3, 1, '2023-01-10'), (4, 2, '2023-01-11');
 
 -- Insert sample data for Courses
 -- Insert sample data for Courses with Semesters
@@ -141,12 +141,14 @@ VALUES
 
 
 -- Enroll Students in Courses
---INSERT INTO users.StudentCourses (StudentId, CourseId)
---VALUES (3, 1), (3, 2), (4, 1);
+INSERT INTO users.StudentCourses (StudentId, CourseId)
+VALUES (3, 1), (3, 2), (4, 1);
 
 -- Insert Completed Courses for Students
 INSERT INTO users.CompletedCourses (StudentId, CourseId, CompletionDate, Grade)
-VALUES (3, 1, '2022-05-15', 'A');
+VALUES 
+(3, 1, '2022-05-15', 'A'),
+(3, 2, '2022-05-15', 'D');
 
 -- View all Completed Courses for a Student
 SELECT * FROM users.Student;

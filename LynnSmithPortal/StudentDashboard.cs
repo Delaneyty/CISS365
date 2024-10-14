@@ -157,6 +157,12 @@ namespace LynnSmithPortal
 
         }
 
+        private void viewGraduationProgressButton_Click(object sender, EventArgs e)
+        {
+            StudentGraduationProgress studentGraduationProgress = new StudentGraduationProgress(student);
+            studentGraduationProgress.ShowDialog();
+        }
+
         //  method to get student courses
         //private string GetStudentCourses(int studentId)
         //{

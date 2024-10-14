@@ -42,78 +42,87 @@
             // coursesTakenListBox
             // 
             coursesTakenListBox.FormattingEnabled = true;
-            coursesTakenListBox.ItemHeight = 15;
-            coursesTakenListBox.Location = new Point(12, 28);
+            coursesTakenListBox.ItemHeight = 25;
+            coursesTakenListBox.Location = new Point(17, 47);
+            coursesTakenListBox.Margin = new Padding(4, 5, 4, 5);
             coursesTakenListBox.Name = "coursesTakenListBox";
-            coursesTakenListBox.Size = new Size(268, 199);
+            coursesTakenListBox.Size = new Size(817, 329);
             coursesTakenListBox.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 10);
+            label1.Location = new Point(17, 17);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(85, 15);
+            label1.Size = new Size(128, 25);
             label1.TabIndex = 1;
             label1.Text = "Courses Taken:";
             // 
             // label2
             // 
-            label2.Location = new Point(331, 68);
+            label2.Location = new Point(858, 91);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(116, 38);
+            label2.Size = new Size(166, 63);
             label2.TabIndex = 2;
             label2.Text = "Credits Completed With a C or More:";
             // 
             // label3
             // 
-            label3.Location = new Point(331, 106);
+            label3.Location = new Point(858, 155);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(97, 37);
+            label3.Size = new Size(139, 62);
             label3.TabIndex = 3;
             label3.Text = "Credits Required to Gradutae:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(331, 143);
+            label4.Location = new Point(858, 216);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(107, 15);
+            label4.Size = new Size(159, 25);
             label4.TabIndex = 4;
             label4.Text = "Credits Remaining:";
             // 
             // creditsCompletedLabel
             // 
             creditsCompletedLabel.AutoSize = true;
-            creditsCompletedLabel.Location = new Point(469, 68);
+            creditsCompletedLabel.Location = new Point(1055, 91);
+            creditsCompletedLabel.Margin = new Padding(4, 0, 4, 0);
             creditsCompletedLabel.Name = "creditsCompletedLabel";
-            creditsCompletedLabel.Size = new Size(109, 15);
+            creditsCompletedLabel.Size = new Size(182, 25);
             creditsCompletedLabel.TabIndex = 5;
             creditsCompletedLabel.Text = "                                  ";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(469, 106);
+            label6.Location = new Point(1055, 155);
+            label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(25, 15);
+            label6.Size = new Size(42, 25);
             label6.TabIndex = 6;
             label6.Text = "120";
             // 
             // creditsRemainingLabel
             // 
             creditsRemainingLabel.AutoSize = true;
-            creditsRemainingLabel.Location = new Point(469, 143);
+            creditsRemainingLabel.Location = new Point(1055, 216);
+            creditsRemainingLabel.Margin = new Padding(4, 0, 4, 0);
             creditsRemainingLabel.Name = "creditsRemainingLabel";
-            creditsRemainingLabel.Size = new Size(55, 15);
+            creditsRemainingLabel.Size = new Size(92, 25);
             creditsRemainingLabel.TabIndex = 7;
             creditsRemainingLabel.Text = "                ";
             // 
             // exitButton
             // 
-            exitButton.Location = new Point(382, 180);
+            exitButton.Location = new Point(931, 278);
+            exitButton.Margin = new Padding(4, 5, 4, 5);
             exitButton.Name = "exitButton";
-            exitButton.Size = new Size(75, 23);
+            exitButton.Size = new Size(107, 38);
             exitButton.TabIndex = 8;
             exitButton.Text = "Close Form";
             exitButton.UseVisualStyleBackColor = true;
@@ -121,10 +130,10 @@
             // 
             // StudentGraduationProgress
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
-            ClientSize = new Size(546, 248);
+            ClientSize = new Size(1276, 413);
             Controls.Add(exitButton);
             Controls.Add(creditsRemainingLabel);
             Controls.Add(label6);
@@ -134,6 +143,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(coursesTakenListBox);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "StudentGraduationProgress";
             Text = "Student Graduation Progress";
             Load += StudentGraduationProgress_Load;

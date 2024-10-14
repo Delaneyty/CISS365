@@ -25,12 +25,11 @@ namespace LynnSmithPortal
             //Get data
             using SqlConnection conn = new SqlConnection(Properties.Settings.Default.customConnString);
             using SqlDataAdapter adapter = new(
-                    "SELECT CompletedCourses.*, Courses.CourseName, Courses.Credits" +
-                    "FROM users.CompletedCourses " +
-                    "JOIN users.Courses ON users.CompletedCourses.CourseId = users.Courses.CourseId " +
-                    "WHERE users.CompletedCourses.StudentId = @studentId", conn);
+               "SELECT CompletedCourses.*, Courses.CourseName, Courses.Credits " +
+            "FROM users.CompletedCourses " +
+            "JOIN users.Courses ON users.CompletedCourses.CourseId = users.Courses.CourseId " +
+            "WHERE users.CompletedCourses.StudentId = @studentId", conn);
             adapter.SelectCommand.Parameters.AddWithValue("@studentId", student.studentId);
-
 
             // "SELECT StudentId, CourseId, CourseName, Credits, CompletionDate, Grade " +
             /*SELECT c.CourseName 
@@ -42,6 +41,7 @@ namespace LynnSmithPortal
             DataTable courseTable = new();
             adapter.Fill(courseTable);
 
+            //Check for success
             //Check for success
             if (courseTable.Rows.Count < 1) //Data not found
             {
@@ -60,7 +60,7 @@ namespace LynnSmithPortal
                     coursesTakenListBox.Items.Add(display);
 
                     //Add to total credits
-                    String grade = r["Grade"].ToString();
+                    string grade = r["Grade"].ToString();
                     if (grade == "A" || grade == "B" || grade == "C")
                     {
                         earnedCredits += int.Parse(r["Credits"].ToString());

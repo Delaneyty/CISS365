@@ -3,52 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\sarah\\source\\repos\\ciss365\\lynnsmithportal\\studentgraduationprogress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:studentgraduationprogress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\sarah\\source\\repos\\ciss365\\lynnsmithportal\\lynnsmithdatabasefile.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
-      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:lynnsmithdatabasefile.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\sarah\\source\\repos\\ciss365\\lynnsmithportal\\studentgraduationprogress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:studentgraduationprogress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\studentdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:studentdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\sarah\\source\\repos\\ciss365\\lynnsmithportal\\studentgraduationprogress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:studentgraduationprogress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\sarah\\source\\repos\\ciss365\\lynnsmithportal\\studentdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:studentdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\sarah\\source\\repos\\ciss365\\lynnsmithportal\\facultydashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:facultydashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\sarah\\source\\repos\\ciss365\\lynnsmithportal\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\sarah\\source\\repos\\ciss365\\lynnsmithportal\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\sarah\\source\\repos\\ciss365\\lynnsmithportal\\lynnsmithdatabasefile.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:lynnsmithdatabasefile.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\sarah\\source\\repos\\ciss365\\lynnsmithportal\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\sarah\\source\\repos\\ciss365\\lynnsmithportal\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\sarah\\source\\repos\\ciss365\\lynnsmithportal\\createaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:createaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|c:\\users\\sarah\\source\\repos\\ciss365\\lynnsmithportal\\facultydashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:facultydashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\studentdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:studentdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|solutionrelative:homepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B74E8B37-FCB7-4B18-A183-1F8950AA61AE}|LynnSmithPortal.csproj|C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\createaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -70,40 +66,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 284,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "StudentGraduationProgress.cs",
               "DocumentMoniker": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\StudentGraduationProgress.cs",
               "RelativeDocumentMoniker": "StudentGraduationProgress.cs",
               "ToolTip": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\StudentGraduationProgress.cs",
               "RelativeToolTip": "StudentGraduationProgress.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAkwCoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-14T00:27:47.154Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "StudentGraduationProgress.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\StudentGraduationProgress.cs",
               "RelativeDocumentMoniker": "StudentGraduationProgress.cs",
@@ -116,29 +96,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "StudentDashboard.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\StudentDashboard.cs",
-              "RelativeDocumentMoniker": "StudentDashboard.cs",
-              "ToolTip": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\StudentDashboard.cs [Design]",
-              "RelativeToolTip": "StudentDashboard.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T21:05:29.097Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StudentDashboard.cs",
-              "DocumentMoniker": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\StudentDashboard.cs",
-              "RelativeDocumentMoniker": "StudentDashboard.cs",
-              "ToolTip": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\StudentDashboard.cs",
-              "RelativeToolTip": "StudentDashboard.cs",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAkwKIAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T16:09:40.33Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "Student.cs",
               "DocumentMoniker": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\Student.cs",
               "RelativeDocumentMoniker": "Student.cs",
@@ -146,7 +103,8 @@
               "RelativeToolTip": "Student.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T20:08:37.933Z"
+              "WhenOpened": "2024-10-12T20:08:37.933Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -156,14 +114,65 @@
               "RelativeDocumentMoniker": "LoginForm.cs",
               "ToolTip": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\LoginForm.cs",
               "RelativeToolTip": "LoginForm.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAnwEMAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAvwEMAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-14T00:42:49.328Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Course.cs",
+              "DocumentMoniker": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\Course.cs",
+              "RelativeDocumentMoniker": "Course.cs",
+              "ToolTip": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\Course.cs",
+              "RelativeToolTip": "Course.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T23:34:24.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "CreateAccount.cs",
+              "DocumentMoniker": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\CreateAccount.cs",
+              "RelativeDocumentMoniker": "CreateAccount.cs",
+              "ToolTip": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\CreateAccount.cs",
+              "RelativeToolTip": "CreateAccount.cs",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAkwKcAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T20:51:31.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FacultyDashboard.cs",
+              "DocumentMoniker": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\FacultyDashboard.cs",
+              "RelativeDocumentMoniker": "FacultyDashboard.cs",
+              "ToolTip": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\FacultyDashboard.cs",
+              "RelativeToolTip": "FacultyDashboard.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowLEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T19:26:31.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "StudentDashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\StudentDashboard.cs",
+              "RelativeDocumentMoniker": "StudentDashboard.cs",
+              "ToolTip": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\StudentDashboard.cs [Design]",
+              "RelativeToolTip": "StudentDashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T21:05:29.097Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "LoginForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\LoginForm.cs",
               "RelativeDocumentMoniker": "LoginForm.cs",
@@ -174,32 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Course.cs",
-              "DocumentMoniker": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\Course.cs",
-              "RelativeDocumentMoniker": "Course.cs",
-              "ToolTip": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\Course.cs",
-              "RelativeToolTip": "Course.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T23:34:24.009Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "CreateAccount.cs",
-              "DocumentMoniker": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\CreateAccount.cs",
-              "RelativeDocumentMoniker": "CreateAccount.cs",
-              "ToolTip": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\CreateAccount.cs",
-              "RelativeToolTip": "CreateAccount.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKcAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T20:51:31.395Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "HomePage.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\HomePage.cs",
               "RelativeDocumentMoniker": "HomePage.cs",
@@ -211,19 +195,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "FacultyDashboard.cs",
-              "DocumentMoniker": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\FacultyDashboard.cs",
-              "RelativeDocumentMoniker": "FacultyDashboard.cs",
-              "ToolTip": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\FacultyDashboard.cs",
-              "RelativeToolTip": "FacultyDashboard.cs",
-              "ViewState": "AgIAAM8AAAAAAAAAAAAnwPEAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T19:26:31.068Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
               "Title": "CreateAccount.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\CreateAccount.cs",
               "RelativeDocumentMoniker": "CreateAccount.cs",
@@ -234,7 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "FacultyDashboard.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\FacultyDashboard.cs",
               "RelativeDocumentMoniker": "FacultyDashboard.cs",
@@ -251,7 +222,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "LynnSmithDatabaseFile.sql ",
               "DocumentMoniker": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\LynnSmithDatabaseFile.sql",
               "RelativeDocumentMoniker": "LynnSmithDatabaseFile.sql",

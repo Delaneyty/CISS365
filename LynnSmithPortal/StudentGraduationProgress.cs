@@ -24,10 +24,19 @@ namespace LynnSmithPortal
         {
             //Get data
             using SqlConnection conn = new SqlConnection(Properties.Settings.Default.customConnString);
-            using SqlDataAdapter adapter = new("SELECT StudentId, CourseId, CourseName, Credits CompletionDate, Grade " +
-                "FROM users.StudentCourses " +
-                "JOIN users.Courses ON users.Courses.CourseId = users.CompletedCourses.CourseId" +
-                "WHERE StudentId = student.studentId", conn);
+            using SqlDataAdapter adapter = new(
+                    "SELECT CompletedCourses.*, Courses.CourseName, Courses.Credits" +
+                    "FROM users.CompletedCourses " +
+                    "JOIN users.Courses ON users.CompletedCourses.CourseId = users.Courses.CourseId " +
+                    "WHERE users.CompletedCourses.StudentId = @studentId", conn);
+            adapter.SelectCommand.Parameters.AddWithValue("@studentId", student.studentId);
+
+
+            // "SELECT StudentId, CourseId, CourseName, Credits, CompletionDate, Grade " +
+            /*SELECT c.CourseName 
+            FROM users.StudentCourses sc
+            JOIN users.Courses c ON sc.CourseId = c.CourseId
+            WHERE sc.StudentId = @StudentId";*/
 
             //Fill data table
             DataTable courseTable = new();
@@ -42,7 +51,7 @@ namespace LynnSmithPortal
             else //Data found
             {
                 int earnedCredits = 0;
-
+                coursesTakenListBox.Items.Clear();
                 //Populate listbox with course data, and tally valid completed credits:
                 foreach (DataRow r in courseTable.Rows)
                 {

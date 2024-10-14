@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PNEcXHGSZDI=",
+  "dgSpecHash": "vKwU/NuILsk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Sarah\\source\\repos\\CISS365\\LynnSmithPortal\\LynnSmithPortal.csproj",
+  "projectFilePath": "C:\\Users\\Sarah\\Source\\Repos\\CISS365\\LynnSmithPortal\\LynnSmithPortal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sarah\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Sarah\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

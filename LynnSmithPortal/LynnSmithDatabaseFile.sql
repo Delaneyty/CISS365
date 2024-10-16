@@ -91,6 +91,10 @@ CREATE TABLE users.Absences (
     PRIMARY KEY (StudentId, CourseId, AbsenceDate) -- Ensures no duplicate absence entries
 );
 
+--Add current Grade field
+ALTER TABLE users.StudentCourses
+ADD currentGrade NVARCHAR(2);
+
 
 -- Insert sample data for Admin and Faculty
 SET IDENTITY_INSERT users.[Admin] ON;
@@ -141,16 +145,24 @@ VALUES
 
 
 -- Enroll Students in Courses
-INSERT INTO users.StudentCourses (StudentId, CourseId)
-VALUES (3, 1), (3, 2), (4, 1);
+INSERT INTO users.StudentCourses (StudentId, CourseId, currentGrade)
+VALUES 
+(3, 1, 'B'),  -- Jane Doe enrolled in Introduction to Computer Science with current grade B
+(3, 3, 'A'),  -- Jane Doe enrolled in Introduction to Psychology with current grade A
+(4, 2, 'C'),  -- Mark Smith enrolled in Data Structures with current grade C
+(4, 5, NULL), -- Mark Smith enrolled in Physics 101, no grade assigned yet
+(4, 4, 'A');  -- Mark Smith enrolled in Biology 101 with current grade A
 
 -- Insert Completed Courses for Students
 INSERT INTO users.CompletedCourses (StudentId, CourseId, CompletionDate, Grade)
 VALUES 
-(3, 1, '2022-05-15', 'A'),
-(3, 2, '2022-05-15', 'D');
+--(3, 1, '2022-05-15', 'A'),
+--(3, 2, '2022-05-15', 'D'),
+(3, 2, '2023-05-15', 'B'), -- Jane Doe completed Data Structures with grade B
+(4, 1, '2023-05-15', 'A'); -- Mark Smith completed Introduction to Computer Science with grade A
 
 -- View all Completed Courses for a Student
 SELECT * FROM users.Student;
 SELECT * FROM users.Courses;
 SELECT * FROM users.StudentCourses;
+SELECT * FROM users.CompletedCourses;

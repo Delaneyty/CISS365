@@ -133,7 +133,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
-            ClientSize = new Size(1276, 413);
+            ClientSize = new Size(1251, 556);
             Controls.Add(exitButton);
             Controls.Add(creditsRemainingLabel);
             Controls.Add(label6);

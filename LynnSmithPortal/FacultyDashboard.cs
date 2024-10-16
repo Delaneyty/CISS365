@@ -23,6 +23,9 @@ namespace LynnSmithPortal
 
         private void FacultyDashboard_Load(object sender, EventArgs e)
         {
+            enrolledCoursesRadioButton.Checked = true;
+            coursesTitleLabel.Text = "Enrolled Courses:";
+
             string connectionString = Properties.Settings.Default.customConnString;
             string query = "SELECT [Name], Email FROM users.Student WHERE AccessLevel = 1";
             // Clear any existing items in the list box
@@ -174,37 +177,61 @@ namespace LynnSmithPortal
         private void PopulateCoursesListBox(int studentId)
         {
             string connectionString = Properties.Settings.Default.customConnString;
-            string query = @"
-            SELECT c.CourseName 
+            string query = "";
+
+            // Check which radio button is selected and adjust the query accordingly
+            if (enrolledCoursesRadioButton.Checked)
+            {
+                // Query to fetch enrolled courses from StudentCourses table
+                query = @"
+            SELECT c.CourseName, sc.currentGrade 
             FROM users.StudentCourses sc
             JOIN users.Courses c ON sc.CourseId = c.CourseId
             WHERE sc.StudentId = @StudentId";
+            }
+            else if (completedCoursesRadioButton.Checked)
+            {
+                // Query to fetch completed courses from CompletedCourses table
+                query = @"
+            SELECT c.CourseName, cc.Grade AS currentGrade 
+            FROM users.CompletedCourses cc
+            JOIN users.Courses c ON cc.CourseId = c.CourseId
+            WHERE cc.StudentId = @StudentId";
+            }
 
             coursesListBox.Items.Clear(); // Clear the courses list before populating
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            if (!string.IsNullOrEmpty(query)) // Ensure the query is valid
             {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@StudentId", studentId);
-
-                try
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@StudentId", studentId);
 
-                    while (reader.Read())
+                    try
                     {
-                        // Add course names to the courses list box
-                        coursesListBox.Items.Add(reader["CourseName"].ToString());
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            // Get the course name and grade (handle null values for currentGrade)
+                            string courseName = reader["CourseName"].ToString();
+                            string currentGrade = reader["currentGrade"] != DBNull.Value ? reader["currentGrade"].ToString() : "N/A"; // Show "N/A" if the grade is null
+
+                            // Add course name and grade to the list box
+                            coursesListBox.Items.Add($"{courseName} - Grade: {currentGrade}");
+                        }
+                        reader.Close();
                     }
-                    reader.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
                 }
             }
         }
+
 
         private void coursesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -213,9 +240,9 @@ namespace LynnSmithPortal
 
         private void dateAbsentTextBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
             // Ensure that the user enters a valid date format (yyyy-mm-dd)
-            
+
         }
 
         private void setAbsentButton_Click(object sender, EventArgs e)
@@ -315,6 +342,133 @@ namespace LynnSmithPortal
             }
 
             return courseId;
+        }
+
+        private void enterNewGradeTextField_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void setGradeButton_Click(object sender, EventArgs e)
+        {
+            // Validate if a student and course are selected
+            if (studentListBox.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a student.");
+                return;
+            }
+
+            if (coursesListBox.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a course.");
+                return;
+            }
+
+            // Validate the grade input
+            string newGrade = enterNewGradeTextField.Text.Trim();
+            if (newGrade.Length < 1 || newGrade.Length > 2)
+            {
+                MessageBox.Show("Error: Grade must be 1 or 2 characters.");
+                return;
+            }
+
+            // Parse the selected student and course
+            string selectedStudentInfo = studentListBox.SelectedItem.ToString();
+            int selectedStudentId = int.Parse(selectedStudentInfo.Split('-')[0].Trim());
+
+            string selectedCourseInfo = coursesListBox.SelectedItem.ToString();
+            string selectedCourseName = selectedCourseInfo.Split('-')[0].Trim(); // Get course name part
+
+            // Fetch the corresponding CourseId for the selected course
+            int selectedCourseId = GetCourseIdByName(selectedCourseName);
+
+            if (selectedCourseId == -1)
+            {
+                MessageBox.Show("Error: Could not find the course ID.");
+                return;
+            }
+
+            // Check if we are updating an enrolled course or a completed course
+            string connectionString = Properties.Settings.Default.customConnString;
+            string query = "";
+
+            if (enrolledCoursesRadioButton.Checked)
+            {
+                // Update grade in StudentCourses table for enrolled students
+                query = "UPDATE users.StudentCourses SET currentGrade = @Grade WHERE StudentId = @StudentId AND CourseId = @CourseId";
+            }
+            else if (completedCoursesRadioButton.Checked)
+            {
+                // Update grade in CompletedCourses table for completed courses
+                query = "UPDATE users.CompletedCourses SET Grade = @Grade WHERE StudentId = @StudentId AND CourseId = @CourseId";
+            }
+
+            // Perform the update in the database
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Grade", newGrade);
+                    command.Parameters.AddWithValue("@StudentId", selectedStudentId);
+                    command.Parameters.AddWithValue("@CourseId", selectedCourseId);
+
+                    try
+                    {
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Grade updated successfully.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error: Grade update failed.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+            }
+
+            // Optionally, refresh the course list to reflect the updated grade
+            PopulateCoursesListBox(selectedStudentId);
+        }
+
+        private void enrolledCoursesRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (enrolledCoursesRadioButton.Checked)
+            {
+                coursesTitleLabel.Text = "Enrolled Courses:";
+                if (studentListBox.SelectedItem != null)
+                {
+                    // Get the selected student's Id and repopulate the courses list box
+                    string selectedStudentInfo = studentListBox.SelectedItem.ToString();
+                    int selectedStudentId = int.Parse(selectedStudentInfo.Split('-')[0].Trim());
+                    PopulateCoursesListBox(selectedStudentId);
+                }
+            }
+        }
+
+        private void completedCoursesRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (completedCoursesRadioButton.Checked)
+            {
+                coursesTitleLabel.Text = "Completed Courses:";
+                if (studentListBox.SelectedItem != null)
+                {
+                    // Get the selected student's Id and repopulate the courses list box
+                    string selectedStudentInfo = studentListBox.SelectedItem.ToString();
+                    int selectedStudentId = int.Parse(selectedStudentInfo.Split('-')[0].Trim());
+                    PopulateCoursesListBox(selectedStudentId);
+                }
+            }
+        }
+
+        private void coursesTitleLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

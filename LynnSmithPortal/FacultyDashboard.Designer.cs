@@ -35,9 +35,14 @@
             label2 = new Label();
             setAbsentButton = new Button();
             coursesListBox = new ListBox();
-            label3 = new Label();
+            coursesTitleLabel = new Label();
             dateAbsentTextBox1 = new TextBox();
             label4 = new Label();
+            label5 = new Label();
+            enterNewGradeTextField = new TextBox();
+            setGradeButton = new Button();
+            enrolledCoursesRadioButton = new RadioButton();
+            completedCoursesRadioButton = new RadioButton();
             SuspendLayout();
             // 
             // viewApplicantsListBox
@@ -94,7 +99,7 @@
             // 
             // setAbsentButton
             // 
-            setAbsentButton.Location = new Point(989, 484);
+            setAbsentButton.Location = new Point(989, 419);
             setAbsentButton.Margin = new Padding(2);
             setAbsentButton.Name = "setAbsentButton";
             setAbsentButton.Size = new Size(272, 35);
@@ -113,19 +118,20 @@
             coursesListBox.TabIndex = 6;
             coursesListBox.SelectedIndexChanged += coursesListBox_SelectedIndexChanged;
             // 
-            // label3
+            // coursesTitleLabel
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(469, 321);
-            label3.Name = "label3";
-            label3.Size = new Size(266, 45);
-            label3.TabIndex = 7;
-            label3.Text = "enrolled courses:";
+            coursesTitleLabel.AutoSize = true;
+            coursesTitleLabel.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            coursesTitleLabel.Location = new Point(469, 321);
+            coursesTitleLabel.Name = "coursesTitleLabel";
+            coursesTitleLabel.Size = new Size(266, 45);
+            coursesTitleLabel.TabIndex = 7;
+            coursesTitleLabel.Text = "enrolled courses:";
+            coursesTitleLabel.Click += coursesTitleLabel_Click;
             // 
             // dateAbsentTextBox1
             // 
-            dateAbsentTextBox1.Location = new Point(989, 385);
+            dateAbsentTextBox1.Location = new Point(989, 369);
             dateAbsentTextBox1.Name = "dateAbsentTextBox1";
             dateAbsentTextBox1.Size = new Size(272, 31);
             dateAbsentTextBox1.TabIndex = 8;
@@ -140,15 +146,73 @@
             label4.TabIndex = 9;
             label4.Text = "enter date absent  (yyyy-mm-dd)";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.ForeColor = SystemColors.ControlDarkDark;
+            label5.Location = new Point(1104, 484);
+            label5.Name = "label5";
+            label5.Size = new Size(29, 25);
+            label5.TabIndex = 10;
+            label5.Text = "or";
+            // 
+            // enterNewGradeTextField
+            // 
+            enterNewGradeTextField.Location = new Point(991, 537);
+            enterNewGradeTextField.Name = "enterNewGradeTextField";
+            enterNewGradeTextField.PlaceholderText = "Enter New Grade";
+            enterNewGradeTextField.Size = new Size(272, 31);
+            enterNewGradeTextField.TabIndex = 11;
+            enterNewGradeTextField.TextChanged += enterNewGradeTextField_TextChanged;
+            // 
+            // setGradeButton
+            // 
+            setGradeButton.Location = new Point(989, 589);
+            setGradeButton.Name = "setGradeButton";
+            setGradeButton.Size = new Size(272, 34);
+            setGradeButton.TabIndex = 12;
+            setGradeButton.Text = "change grade";
+            setGradeButton.UseVisualStyleBackColor = true;
+            setGradeButton.Click += setGradeButton_Click;
+            // 
+            // enrolledCoursesRadioButton
+            // 
+            enrolledCoursesRadioButton.AutoSize = true;
+            enrolledCoursesRadioButton.Location = new Point(469, 645);
+            enrolledCoursesRadioButton.Name = "enrolledCoursesRadioButton";
+            enrolledCoursesRadioButton.Size = new Size(213, 29);
+            enrolledCoursesRadioButton.TabIndex = 13;
+            enrolledCoursesRadioButton.TabStop = true;
+            enrolledCoursesRadioButton.Text = "show enrolled courses";
+            enrolledCoursesRadioButton.UseVisualStyleBackColor = true;
+            enrolledCoursesRadioButton.CheckedChanged += enrolledCoursesRadioButton_CheckedChanged;
+            // 
+            // completedCoursesRadioButton
+            // 
+            completedCoursesRadioButton.AutoSize = true;
+            completedCoursesRadioButton.Location = new Point(709, 645);
+            completedCoursesRadioButton.Name = "completedCoursesRadioButton";
+            completedCoursesRadioButton.Size = new Size(234, 29);
+            completedCoursesRadioButton.TabIndex = 14;
+            completedCoursesRadioButton.TabStop = true;
+            completedCoursesRadioButton.Text = "show completed courses";
+            completedCoursesRadioButton.UseVisualStyleBackColor = true;
+            completedCoursesRadioButton.CheckedChanged += completedCoursesRadioButton_CheckedChanged;
+            // 
             // FacultyDashboard
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
-            ClientSize = new Size(1320, 748);
+            ClientSize = new Size(1320, 961);
+            Controls.Add(completedCoursesRadioButton);
+            Controls.Add(enrolledCoursesRadioButton);
+            Controls.Add(setGradeButton);
+            Controls.Add(enterNewGradeTextField);
+            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(dateAbsentTextBox1);
-            Controls.Add(label3);
+            Controls.Add(coursesTitleLabel);
             Controls.Add(coursesListBox);
             Controls.Add(setAbsentButton);
             Controls.Add(label2);
@@ -173,8 +237,13 @@
         private Label label2;
         private Button setAbsentButton;
         private ListBox coursesListBox;
-        private Label label3;
+        private Label coursesTitleLabel;
         private TextBox dateAbsentTextBox1;
         private Label label4;
+        private Label label5;
+        private TextBox enterNewGradeTextField;
+        private Button setGradeButton;
+        private RadioButton enrolledCoursesRadioButton;
+        private RadioButton completedCoursesRadioButton;
     }
 }

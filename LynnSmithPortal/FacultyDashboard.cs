@@ -470,5 +470,11 @@ namespace LynnSmithPortal
         {
 
         }
+
+        private void viewEnrollmentButton_Click(object sender, EventArgs e)
+        {
+            ViewStudentsBySemester viewStudentsBySemester = new ViewStudentsBySemester();
+            viewStudentsBySemester.Show();
+        }
     }
 }

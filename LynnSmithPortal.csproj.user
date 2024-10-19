@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FacultyApplicationViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FacultyDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FillableApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="HomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RegisterCourseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StudentDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StudentGraduationProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewStudentsBySemester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="CreateAccount.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
